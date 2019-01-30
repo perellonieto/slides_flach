@@ -77,11 +77,11 @@ See [(Flach & Kull, NIPS 2015)](http://people.cs.bris.ac.uk/~flach/PRGcurves//) 
 
 > Concatenation of confusion matrices by cell-wise summing corresponds to arithmetic averaging of evaluation measures with weights *not requiring further measurements* iff they have **parallel** ROC isometrics. 
 
-![Accuracy isometrics](img/Acc.pdf) <!-- .element height="40%" width="40%" -->
+![Accuracy isometrics](img/Acc.png) <!-- .element height="40%" width="40%" -->
 
 
 ### Conjecture 2
 
 > Concatenation of confusion matrices by cell-wise summing corresponds to arithmetic averaging of evaluation measures with weights *possibly requiring further measurements* iff ROC isometrics are **straight**. 
 
-![F-score isometrics](img/Fscore.pdf) <!-- .element height="40%" width="40%" -->
+![F-score isometrics](img/Fscore.png) <!-- .element height="40%" width="40%" -->

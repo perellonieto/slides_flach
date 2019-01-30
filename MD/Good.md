@@ -8,5 +8,5 @@
 
 ### ROC curve and cost curve
 
-![ROC curve](img/CC1.pdf) <!-- .element height="40%" width="40%" -->
-![Cost curve](img/CC2.pdf) <!-- .element height="40%" width="40%" -->
+![ROC curve](img/CC1.png) <!-- .element height="40%" width="40%" -->
+![Cost curve](img/CC2.png) <!-- .element height="40%" width="40%" -->
