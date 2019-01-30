@@ -1,0 +1,13 @@
+# Site settings
+title: Performance Evaluation in Machine Learning
+subtitle: ...and the WAY FORWARD
+email: Peter.Flach@bristol.ac.uk
+website: http://www.cs.bris.ac.uk/~flach
+#description: > # this means to ignore newlines until "baseurl:"
+baseurl: "" # the subpath of your site, e.g. /blog/
+author: Peter Flach (U Bristol and Alan Turing Institute, UK)
+style: "pf"
+image: "img/GBU.png"
+
+# Build settings
+markdown: kramdown
