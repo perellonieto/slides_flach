@@ -4,10 +4,6 @@
   <head>
     {% include head.html %}
 
-    <!--Reveal.js-->
-    <link href="{{ site.baseurl }}/web/css/reveal.css" rel="stylesheet">
-    <link href="{{ site.baseurl }}/web/css/theme/{{ site.style }}.css" rel="stylesheet">
-
     {% if site.title %}
       <meta name=Title content="{{ site.title }}">
     {% endif %}
@@ -53,10 +49,6 @@
         {{ content }}
       </div>
     </div>
-
-    <script>
-      $(function() { $(".swish").LPN({swish:"{{ site.swish }}"}); });
-    </script>
 
     <script src="{{ site.baseurl }}/web/lib/js/head.min.js"></script>
     <script src="{{ site.baseurl }}/web/js/reveal.js"></script>
