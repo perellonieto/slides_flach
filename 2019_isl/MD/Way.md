@@ -59,7 +59,7 @@ prec(C_1 \circ C_2) &= \frac{\sum_i TP_i}{\sum_i PPos_i} \\\\
 $$
 
 Now, *the weights are themselves measurements*, 
-without which you cannot calculate the concatenated value. 
+without which the concatenated value cannot be calculated from the component values. 
 
 
 ### Hence, F-score is different 
@@ -85,3 +85,8 @@ See [(Flach & Kull, NIPS 2015)](http://people.cs.bris.ac.uk/~flach/PRGcurves//) 
 > Concatenation of confusion matrices by cell-wise summing corresponds to arithmetic averaging of evaluation measures with weights *possibly requiring further measurements* iff ROC isometrics are **straight**. 
 
 ![F-score isometrics](img/Fscore.png) <!-- .element height="40%" width="40%" -->
+
+
+### Reference
+
+- [Flach, P., 2019. Performance Evaluation in Machine Learning: The Good, The Bad, The Ugly and The Way Forward. In 33rd AAAI Conference on Artificial Intelligence.](https://aaai.org/ojs/index.php/AAAI/article/view/5055)

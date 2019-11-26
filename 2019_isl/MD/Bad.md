@@ -17,4 +17,9 @@ We now see *chronic over-reporting* of performance measures without justificatio
 ### MSE vs MAE
 Both can be used to evaluate predictive performance, but
 - *Mean Squared Error* gives expected misclassification loss if predicted probabilities are thresholded given **known** deployment class distribution; 
-- *Mean Absolute Error* gives expected loss if class distribution is **wrongly estimated** (or classifier uses predicted probabilities to make **stochastic** predictions).
+- *Mean Absolute Error* gives expected loss if class distribution is **guessed wrongly** (or classifier uses predicted probabilities to make **stochastic** predictions).
+
+
+### Reference
+
+- [Ferri, C., Hernandez-Orallo, J. and Flach, P., 2019. Setting decision thresholds when operating conditions are uncertain. Data Mining and Knowledge Discovery, pp.1-43.](https://link.springer.com/article/10.1007/s10618-019-00613-7)
