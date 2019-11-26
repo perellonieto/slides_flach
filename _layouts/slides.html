@@ -4,19 +4,22 @@
   <head>
     {% include head.html %}
 
-    {% if site.title %}
-      <meta name=Title content="{{ site.title }}">
+    {% if page.title %}
+      <meta name=Title content="{{ page.title }}">
     {% endif %}
     {% if site.author %}
       <meta name=author content="{{ site.author }}">
     {% endif %}
-    {% if page.keywords  %}
+    {% if page.keywords %}
       <meta name=Keywords content="{{ page.keywords }}">
     {% endif %}
-    {% if page.subtitle %}
-      <title>{{ page.subtitle }}</title>
-    {% else %}
-      <title>{{ site.title }}</title>
+
+    {% if page.title %}
+      {% if page.subtitle %}
+        <title>{{ page.title }} | {{ page.subtitle }}</title>
+      {% else %}
+        <title>{{ page.title }}</title>
+      {% endif %}
     {% endif %}
   </head>
 
@@ -24,27 +27,20 @@
 
     {% include header.html %}
 
-
-
     <div class="reveal" style="margin-top: -50px; padding-top: 50px;">
       <div style="position: absolute; bottom: 1em; width: 100%; font-size: 0.4em; text-align: center;">
-        {{ site.title }} | {{ site.author }}
+        {{ page.title }} | {{ site.author }}{% if page.affiliation %}&nbsp;{{ page.affiliation }}{% elsif site.affiliation %}&nbsp;{{ site.affiliation }}{% endif %}
       </div>
       <div class="slides">
 
-    {% if page.title %}
 		<section>
-		<h2>{{ page.title }}</h2>
-    	<h3>{{ page.subtitle }}</h3>
-		</section>
-    {% else %}
-		<section>
-		<h2>{{ site.title }}</h2>
-    {% if site.image %}<img src="{{ site.image }}" height="300">{% endif %}
-    {% if site.subtitle %}<h3>{{ site.subtitle }}</h3>{% endif %}
-		<h4>{{ site.author }}</h4>
-		</section>
+		{% if page.title %}<h2>{{ page.title }}</h2>{% endif %}
+    {% if page.coverimage %}<img src="{{ page.coverimage }}" height="300">{% endif %}
+    {% if page.subtitle %}<h3>{{ page.subtitle }}</h3>{% endif %}
+    {% if site.author %}
+    <h4>{{ site.author }}{% if page.affiliation %}&nbsp;{{ page.affiliation }}{% elsif site.affiliation %}&nbsp;{{ site.affiliation }}{% endif %}</h4>
     {% endif %}
+		</section>
 
         {{ content }}
       </div>

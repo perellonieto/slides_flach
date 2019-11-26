@@ -1,88 +1,62 @@
 ---
-layout: slides
+layout: none
 ---
 
-<section data-markdown="MD/Hard.md"  
-         data-background="white"
-         data-separator="^\n----\n\n"  
-         data-separator-vertical="^\n\n"  
-         data-separator-notes="\n^Note:"  
-         data-charset="iso-8859-15">
-</section>
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
 
-<section data-markdown="MD/Good.md"  
-         data-background="white"
-         data-background-image="img/Good.png"
-         data-background-position="0% 15%"
-         data-background-repeat="no-repeat"
-         data-separator="^\n----\n\n"  
-         data-separator-vertical="^\n\n"  
-         data-separator-notes="\n^Note:"  
-         data-charset="iso-8859-15">
-</section>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-<section data-markdown="MD/Bad.md"  
-         data-background="white"
-         data-background-image="img/Bad.png"
-         data-background-position="0% 55%"
-         data-background-repeat="no-repeat"
-         data-separator="^\n----\n\n"  
-         data-separator-vertical="^\n\n"  
-         data-separator-notes="\n^Note:"  
-         data-charset="iso-8859-15">
-</section>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
-<section data-markdown="MD/Ugly.md"  
-         data-background="white"
-         data-background-image="img/Ugly.png"
-         data-background-position="0% 100%"
-         data-background-repeat="no-repeat"
-         data-separator="^\n----\n\n"  
-         data-separator-vertical="^\n\n"  
-         data-separator-notes="\n^Note:"  
-         data-charset="iso-8859-15">
-</section>
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
 
-<section data-markdown="MD/Way.md"  
-         data-background="white"
-         data-background-image="img/Way.jpg"
-         data-background-position="0% 100%"
-         data-background-size="150px"
-         data-background-repeat="no-repeat"
-         data-separator="^\n----\n\n"  
-         data-separator-vertical="^\n\n"  
-         data-separator-notes="\n^Note:"  
-         data-charset="iso-8859-15">
-</section>
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
 
-<section data-markdown="MD/Outlook.md"  
-         data-background="white"
-         data-background-image="img/OutlookR.jpg"
-         data-background-position="0% 50%"
-         data-background-size="150px"
-         data-background-repeat="no-repeat"
-         data-separator="^\n----\n\n"  
-         data-separator-vertical="^\n\n"  
-         data-separator-notes="\n^Note:"  
-         data-charset="iso-8859-15">
-</section>
+  <link href="web/css/index.css" rel="stylesheet">
 
-<!--section>
-<section>
-test
-</section>
-<section>
-$test$
-</section>
-</section-->
+  <title>{{ site.title }}</title>
 
-<!--section data-background-image="img/GBU.png"
-         data-background-size="100px"
-         data-background-position="0% 50%">
-	<h2>Image</h2>
-</section>
-<section data-background-image="img/GBU.png"
-         data-background-size="100px"
-        data-background-repeat="repeat">
-	<h2>This background image will be sized to 100px and repeated</h2>
-</section-->
+  <!--https://getbootstrap.com/docs/4.3/examples/cover/-->
+
+</head>
+
+  <body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="masthead mb-auto">
+    <div class="inner">
+      <h3 class="masthead-brand">{{ site.title }}</h3>
+    </div>
+  </header>
+
+  <main role="main" class="inner cover">
+    <ul>
+      <li><a href="2019_aaai">AAAI 2019: Performance Evaluation in Machine Learning</a></li>
+      <li><a href="2019_euads">EuADS 2019: From Data Mining Processes to Data Science Trajectories</a></li>
+    </ul>
+  </main>
+
+  <footer class="mastfoot mt-auto">
+    <div class="inner">
+      <p><a href="{{ site.website }}">{{ site.author }}</a> {{ site.affiliation }}</p>
+    </div>
+  </footer>
+
+</html>
