@@ -8,7 +8,7 @@
 ### Stevens' levels of measurement (1946)
 
 [![Stevens (1946)](img/Stevens1946.gif)  <!-- .element height="20%" width="20%" -->](https://www.jstor.org/stable/1671815)
-![Stevens' levels](img/StevensTable.pdf)  <!-- .element height="65%" width="65%" -->
+![Stevens' levels](img/StevensTable.png)  <!-- .element height="65%" width="65%" -->
 
 
 ### Levels of measurement
@@ -52,4 +52,4 @@ There should be more? E.g. scales bounded from both sides. <!-- .element: class=
 
 ### Types to the rescue? 
 
-[![xpecBits Haskell code](img/xpecBits.tiff)  <!-- .element height="80%" width="80%" -->](https://repl.it/repls/ThoughtfulWarlikeRuntimelibrary)
+[![xpecBits Haskell code](img/xpecBits.png)  <!-- .element height="80%" width="80%" -->](https://repl.it/repls/ThoughtfulWarlikeRuntimelibrary)

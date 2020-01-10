@@ -7,14 +7,14 @@
 
 ### Item-Response Theory
 
-![IRT](img/IRT.pdf)  <!-- .element height="40%" width="40%" -->
+![IRT](img/IRT.png)  <!-- .element height="40%" width="40%" -->
 
 $E[x_{ij}|\delta_j,a_j] = \frac{1}{1+\exp(-a_j(\theta_i-\delta_j))}$
 
 
 ### Beta-IRT
 
-![Beta-IRT](img/BIRT.pdf)  <!-- .element height="40%" width="40%" -->
+![Beta-IRT](img/BIRT.png)  <!-- .element height="40%" width="40%" -->
 
 $E[p_{ij}|\delta_j,a_j] = \frac{1}{1+\left(\frac{\delta_i}{\theta_j}\cdot\frac{1-\theta_j}{1-\delta_i} \right)^{a_j}}$
 
