@@ -2,7 +2,7 @@
 
 ![M1](img/M1.png)
 
-![M2](img/M2.png) <!-- .element: class="fragment" -->
+*Concatenate then measure* gives the same result as **measure then calculate**. 
 
 
 ### Measurements on Confusion Matrices
@@ -32,7 +32,7 @@ acc(C_1 \circ C_2) &= \frac{\sum_i TP_i+\sum_i TN_i}{\sum_i N_i} \\\\
 \end{align}
 $$
 
-This is a weighted average where the weights do not depend on the performance of the two models (and can be made uniform if needed). 
+This is a weighted average where the weights do not depend on the performance of the two models (and can be made uniform, as in cross-validation). 
 
 
 ### True/false positive rate, recall
@@ -45,7 +45,8 @@ tpr(C_1 \circ C_2) &= \frac{\sum_i TP_i}{\sum_i Pos_i} \\\\
 \end{align}
 $$
 
-Again, a weighted average with weights that can be determined in advance. 
+Again, a weighted average with weights that can be determined in advance
+(or made uniform, as in stratified cross-validation). 
 
 
 ### Precision is different 
@@ -69,24 +70,5 @@ $$
 Fscore(C_1 \circ C_2) &= \frac{Pos_1+PPos_1}{Pos+PPos}Fscore(C_1) \nonumber \\\\ &+ \frac{Pos_2+PPos_2}{Pos+PPos}Fscore(C_2) 
 \end{align}
 $$
-
-See [(Flach & Kull, NIPS 2015)](http://people.cs.bris.ac.uk/~flach/PRGcurves//) for a deeper analysis of this. 
-
-
-### Conjecture 1
-
-> Concatenation of confusion matrices by cell-wise summing corresponds to arithmetic averaging of evaluation measures with weights *not requiring further measurements* iff they have **parallel** ROC isometrics. 
-
-![Accuracy isometrics](img/Acc.png) <!-- .element height="40%" width="40%" -->
-
-
-### Conjecture 2
-
-> Concatenation of confusion matrices by cell-wise summing corresponds to arithmetic averaging of evaluation measures with weights *possibly requiring further measurements* iff ROC isometrics are **straight**. 
-
-![F-score isometrics](img/Fscore.png) <!-- .element height="40%" width="40%" -->
-
-
-### Reference
 
 - [Flach, P., 2019. Performance Evaluation in Machine Learning: The Good, The Bad, The Ugly and The Way Forward. In 33rd AAAI Conference on Artificial Intelligence.](https://aaai.org/ojs/index.php/AAAI/article/view/5055)

@@ -11,8 +11,7 @@ Transparent machine learning requires knowledge of
 
 - Need to consider *multiple* measures. 
   - e.g. true & false positive rate, precision & recall
-- Need to anticipate *changing* operating points and contexts. 
-  - and uncertainty in estimating those!
+- Operating points & contexts can *change*. 
 
 ![ROC curve](img/CC1.png) <!-- .element height="30%" width="30%" -->
 ![Cost curve](img/CC2.png) <!-- .element height="30%" width="30%" -->
