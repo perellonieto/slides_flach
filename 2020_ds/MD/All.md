@@ -2,15 +2,16 @@
 
 Measurements are relevant in machine learning and discovery science for at least two reasons: 
 - *Features* are often are measurements on some scale, and we need to understand the properties of the scale, admissible operations, etc.
-  - e.g., the arithmetic mean is not always appropriate. 
+  - E.g., the arithmetic mean is not always appropriate. 
 - *Performance metrics* are also measurements, and hence the same applies! 
+  - Taking expectations, area under curve etc. may not be coherent.
 
 
 ### Measuring things is easy, right?
 
-Using a calibrated measuring instrument (e.g., a ruler) we map the object under measurement to a real number.
+Using a calibrated measuring instrument (e.g., a ruler) we map the object under measurement $a$ to a real number $M(a).
 
-This mapping $M$ should be such that if I *concatenate* two objects $a \circ b$ there should be a corresponding numerical operation $\oplus$ on the measurements (e.g., addition), establishing a **scale**. 
+This mapping should be such that if I *concatenate* two objects $a \circ b$ there should be a corresponding numerical operation $\oplus$ on the measurements (e.g., addition), establishing a **scale**. 
 
 ![M1](img/M1.png)   <!-- .element height="50%" width="50%" -->
 
@@ -19,7 +20,7 @@ This mapping $M$ should be such that if I *concatenate* two objects $a \circ b$ 
 
 *Averaging* can also be understood in terms of concatenation: we are looking for $M(c)$ for some $c$ such that $M(a \circ b) = M(c \circ c)$.
 
-Clearly this gives a value in between $M(a)$ and $M(b)$. Other properties depend on the scale used. 
+Clearly this gives a value in between $M(a)$ and $M(b)$. Other properties depend on the **scale** used. 
 
 Let's look at some examples.
 
@@ -54,9 +55,9 @@ What can I say about these two trips?
 **Segment 2**: distance $d_2$, time $t_2$, velocity $v_2=d_2/t_2$
 **Overall**: distance $d=d_1+d_2$, time $t=t_1+t_2$, velocity $v=(d_1+d_2)/(t_1+t_2)$
 
-- $t_1=t_2 \Rightarrow v = (v_1+v_2)/2 = A(v_1,v_2)$ <!-- .element: class="fragment" -->
+- $t_1=t_2 \Rightarrow v = (v_1+v_2)/2 = AM(v_1,v_2)$ <!-- .element: class="fragment" -->
   - or in general: $v = {\color{red}{(t_1/t)}}\cdot v_1 + {\color{red}{(t_2/t)}}\cdot v_2$ <!-- .element: class="fragment" -->
-- $d_1=d_2 \Rightarrow v = 2/(1/v_1+1/v_2) = H(v_1,v_2)$ <!-- .element: class="fragment" -->
+- $d_1=d_2 \Rightarrow v = 2/(1/v_1+1/v_2) = HM(v_1,v_2)$ <!-- .element: class="fragment" -->
   - or in general: $1/v = {\color{red}{(d_1/d)}}\cdot 1/v_1 + {\color{red}{(d_2/d)}}\cdot 1/v_2$ <!-- .element: class="fragment" -->
 
 
@@ -69,14 +70,14 @@ What can I say about these two trips?
 Alternatively, we can use *weighted* means (either arithmetic or harmonic). 
 
 
-### A machine learning example (1)
+### Three machine learning examples (1)
 
 I apply a binary classifier on two test sets A and B. 
 
-The classifier achieves 70% and 80% *accuracy* 
+On A and B separately, the classifier achieves 70% and 80% *accuracy* 
 (the proportion of correctly classified instances).
 
-When I combine A and B into a single test set
+- When I combine A and B into a single test set
 and re-run the classifier its accuracy is 75%.
 What can I say about A and B?   <!-- .element: class="fragment" -->
   1. They contain the same number of instances.   <!-- .element: class="fragment" -->
@@ -85,70 +86,77 @@ What can I say about A and B?   <!-- .element: class="fragment" -->
   4. Neither.   <!-- .element: class="fragment" -->
 
 
-### A machine learning example (2)
+### Three machine learning examples (2)
 
-I apply a binary classifier on two test sets A and B. 
+(same question, but now for recall = true positive rate)
  
-The classifier achieves 70% and 80% *recall* 
+On two other test sets C and D, the classifier achieves 70% and 80% *recall*
 (the proportion of correctly classified positives).
 
-When I combine A and B into a single test set
+- When I combine C and D into a single test set
 and re-run the classifier its recall is 75%.
-What can I say about A and B?   <!-- .element: class="fragment" -->
+What can I say about C and D?   <!-- .element: class="fragment" -->
   1. They contain the same number of instances.   <!-- .element: class="fragment" -->
   2. They contain the same number of positives.   <!-- .element: class="fragment" -->
   3. Both.   <!-- .element: class="fragment" -->
   4. Neither.   <!-- .element: class="fragment" -->
 
 
-### A machine learning example (3)
+### Three machine learning examples (3)
 
-I apply a binary classifier on two test sets A and B. 
+(same question, but now for precision)
  
-The classifier achieves 70% and 80% *precision* 
+On yet other test sets E and F, the classifier achieves 70% and 80% *precision* 
 (the proportion of correct positive predictions).
 
-When I combine A and B into a single test set
+- When I combine E and F into a single test set
 and re-run the classifier its precision is 75%.
-What can I say about A and B?   <!-- .element: class="fragment" -->
+What can I say about E and F?   <!-- .element: class="fragment" -->
   1. They contain the same number of instances.   <!-- .element: class="fragment" -->
   2. They contain the same number of positives.   <!-- .element: class="fragment" -->
   3. Both.   <!-- .element: class="fragment" -->
   4. Neither.   <!-- .element: class="fragment" -->
+
+
+### Correct answers
+
+(Q1: 1) $acc(A \circ B) = AM(acc(A),acc(B))$ implies $A$ and $B$ contain the same number of instances.   <!-- .element: class="fragment" -->
+
+(Q2: 2) $tpr(C \circ D) = AM(tpr(C),tpr(D))$ implies $C$ and $D$ contain the same number of positives.   <!-- .element: class="fragment" -->
+
+(Q3: 4) $prec(E \circ F) = AM(prec(E),prec(F))$ implies the classifier makes the same number of positive predictions on $E$ and $F$.   <!-- .element: class="fragment" -->
 
 
 ### What's my point? 
 
-- Using the (unweighted) arithmetic mean on performance metrics needs to be justified: 
-  - for accuracy the test sets need to be equal in size; 
-  - for recall the class distributions need to be the same;
-  - for precision the proportions of positive predictions need to be the same. 
+- Using the (unweighted) arithmetic mean on performance metrics needs to be **justified**: 
+  - for accuracy the test sets need to be equal in size (as in cross-validation); 
+  - for recall the class distributions need to be the same (stratified CV);
+  - for precision the proportions of positive predictions need to be the same (??). 
 
-Note that the latter is much harder to achieve. 
-Arithmetically averaging precision is therefore rarely justified. 
+Arithmetically averaging precision is rarely justified. 
 The same holds for F-score (more on that later).    <!-- .element: class="fragment" -->
 
 
-### Outline of my talk
+### What I will talk about
+
+- [Changes of scale](#/2)
+  - Precision-recall curves and how to fix them
+  - How log-loss relates to squared loss
+- [Scales, units, dimensions and types](#/3)
+  - Perspectives from psychology, physics and computer science
+- [You can't always measure what you want](#/4)
+  - Latent variable models
+  - Causal models
+- [Conclusions and outlook](#/5)
 
 ----
 
-## Scales, units, dimensions and types
-
-Perhaps surprisingly, there isn't a definitive framework to link all these concepts together. 
-We'll look at it from four perspectives: 
-
-- The mathematical perspective
-- The physics perspective
-- Levels of measurement
-- The computer science perspective
-
-
-### The mathematical perspective: scales
+## Changes of scale
 
 Most means $M(x,y)$ are *quasi-arithmetic*: 
 there exists a **change of scale** $g: \mathbb{R} \rightarrow \mathbb{R}$ such that 
-$M(x,y) = g^{-1}(A(g(x),g(y)))$. 
+$M(x,y) = g^{-1}(AM(g(x),g(y)))$. 
 
 Mean | $M(x,y)$ | $g(x)$ 
 ---|---|---
@@ -161,66 +169,21 @@ Generalised | $\sqrt[p]{(x^p+y^p)/2}$ | $x^p$
 
 ### Comparing means
 
-![Isometrics plot](img/means.png)  <!-- .element height="40%" width="40%" -->
-
-Top (sensitive to small values) to bottom (sensitive to large values): harmonic, geometric, arithmetic, quadratic. 
+![Isometrics plot](img/means.png)  <!-- .element height="80%" width="80%" -->
 
 
-### The physics perspective: units and dimensions
+### Change of scale examples in ML
 
-- Physical quantities have an associated **dimension** (Fourier, 1822). 
-- In order to be compared and aggregated, quantities need to be *commensurable* (have the same dimension). 
-  - Aggregation is usually additive, but this is a choice.
-- Incommensurable quantities may be multiplied and divided, giving new derived dimensions. 
-- E.g. pressure has dimension $M L^{-1} T^{-2}$
-  - SI units Pascal = Newton/m$^2$ = kg/(m*s$^2$).
+1. *Precision-recall curves* have many issues that can be solved with a change of scale. 
+2. Loss measures such as *log-loss* and *squared loss* can be related to each other through a change of scale. 
 
 
-### Dimensionless quantities can be problematic
+## ROC curve and precision-recall curve
 
-- Angle is a ratio of lengths, hence dimensionless; but it has a unit (radians, degrees). This leads to angular velocity having dimension $T^{-1}$, which is odd. 
-  - could choose $L_x$, $L_y$, $L_z$ as distinct dimensions. 
-- Functions such as $\exp$`, `$\sin$ etc. can only take and result in dimensionless quantities. 
-  - e.g., $\log V$ where $V$ has dimension $L^3$ should be thought of as $\log (V/v)$ where $v$ is an arbitrary unit of volume. 
+![PR curve](img/fig1-left.png) <!-- .element height="40%" width="40%" -->
+![PRG curve](img/fig1-right.png) <!-- .element height="40%" width="40%" -->
 
-
-### In ML, "dimensionless" quantities are everywhere
-
-- relative frequencies, probabilities, evaluation metrics...
-- Still, we treat derived quantities such as $\log p$ as having a unit (bits, log-likelihood). 
-- We also have different concatenation operators, such as $p_1+p_2$ for the union of mutually exclusive events, $p_1 \cdot p_2$ for the joint probability of independent events. 
-
-
-### Stevens' levels of measurement (1946)
-
-[![Stevens (1946)](img/Stevens1946.gif)  <!-- .element height="20%" width="20%" -->](https://www.jstor.org/stable/1671815)
-![Stevens' levels](img/StevensTable.png)  <!-- .element height="65%" width="65%" -->
-
-
-### Levels of measurement
-
-- Nominal: no order, no scale
-- Ordinal: order, no scale
-- Interval: differences are meaningful, but no zero
-- Ratio: fixed zero, ratios are also meaningful
-- Transformed scales: e.g. log-ratio
-
-There should be more? E.g. scales bounded from both sides. <!-- .element: class="fragment" -->
-
-
-### The computer science perspective: types and operations
-
-[![xpecBits Haskell code](img/xpecBits.tiff)  <!-- .element height="80%" width="80%" -->](https://repl.it/repls/ThoughtfulWarlikeRuntimelibrary)
-
-----
-
-## Change of scale examples in ML
-
-Linear interpolation: is it justified? 
-
-Arithmetic averaging: is it justified? 
-
-This is where *scale* really matters. 
+In contrast to ROC curves, PR curves don't allow linear interpolation and don't have a meaningful area under the curve.    <!-- .element: class="fragment" -->
 
 
 ### $F_{\beta}$-score
@@ -242,11 +205,23 @@ $$F_{\beta} = \frac{(\beta^2+1) TP}{(\beta^2+1) TP + \beta^2 FN + FP}$$
 $$1/F_{\beta} = \frac{\beta^2}{\beta^2+1} 1/rec + \frac{1}{\beta^2+1} 1/prec$$   <!-- .element: class="fragment" -->
 
 
-### Scale transformations
+### Fixing PR curves through scale transformations
 
-1. Linearise: e.g., $$prec=TP/(TP+FP) \rightarrow 1/prec = 1+FP/TP$$
-
-2. Map $[1,1/\pi]$ back to $[0,1]$: e.g., $$precG = \frac{prec-\pi}{(1-\pi)prec} = 1 - \frac{\pi}{1-\pi} FP/TP$$  <!-- .element: class="fragment" -->
+1. Take reciprocals: 
+$$
+\begin{align}
+prec &= TP/(TP+FP) \rightarrow 1/prec = 1+FP/TP \\\\
+rec  &= TP/(TP+FN) \rightarrow 1/rec  = 1+FN/TP \\\\
+\\ \\\\
+\end{align}
+$$
+2. Map $[1,1/\pi]$ back to unit interval: 
+$$
+\begin{align}
+precG &= \frac{prec-\pi}{(1-\pi)prec} = 1 - \frac{\pi}{1-\pi} FP/TP \\\\
+recG  &= \frac{rec-\pi}{(1-\pi)rec} = 1 - \frac{\pi}{1-\pi} FN/TP \\\\
+\end{align}
+$$  <!-- .element: class="fragment" -->
 
 
 ### Et voila!
@@ -254,17 +229,15 @@ $$1/F_{\beta} = \frac{\beta^2}{\beta^2+1} 1/rec + \frac{1}{\beta^2+1} 1/prec$$  
 ![PR curve](img/fig2-left.png) <!-- .element height="40%" width="40%" -->
 ![PRG curve](img/fig2-right.png) <!-- .element height="40%" width="40%" -->
 
+PRG curves have a meaningful area related to expected $F_1$ score, and their convex hull can be used to determine the optimal operating point given any $\beta^2$.  <!-- .element: class="fragment" -->
+
 
 ### The complete picture
 
 ![from ROC via PR to PRG](img/PRG.png)
 
+- [Flach, P. and Kull, M., 2015. Precision-recall-gain curves: PR analysis done right. NIPS 2015.](http://people.cs.bris.ac.uk/~flach/PRGcurves)
 
-### Reference
-
-- [Flach, P. and Kull, M., 2015. Precision-recall-gain curves: PR analysis done right. In Advances in neural information processing systems (pp. 838-846).](http://people.cs.bris.ac.uk/~flach/PRGcurves)
-
-----
 
 ## Squared loss and Log-loss
 
@@ -292,7 +265,7 @@ Symbol | Range | Meaning
 
 `$$Q(t; \pi , c_{+}, c_{-}) =  c_{+} \pi (1 -F_{+}(t)) + c_{-} (1-\pi) F_{-}(t)$$`
 
-- Re-parametrising on an *arithmetic scale*:
+- Let $b$ be the *arithmetic* sum of `$c_{+}, c_{-}$`:
 
 `$$Q(t; \pi , b, c) =  b\left[c \pi (1 -F_{+}(t)) + (1-c) (1-\pi) F_{-}(t)\right]$$`
 
@@ -314,11 +287,11 @@ Symbol | Range | Meaning
 
 ### Changing the cost scale
 
-- The starting point is the same: 
+- Starting again from loss at threshold $t$:
 
 `$$Q(t; \pi , c_{+}, c_{-}) =  c_{+} \pi (1 -F_{+}(t)) + c_{-} (1-\pi) F_{-}(t)$$`
 
-- Re-parametrising on a *harmonic scale*: 
+- Let $d$ be the *harmonic* sum of `$c_{+}, c_{-}$`:
 
 `$$Q(t; \pi , d, c) =  d\left[\frac{1}{1-c} \pi (1 -F_{+}(t)) + \frac{1}{c} (1-\pi) F_{-}(t)\right]$$`
 
@@ -338,23 +311,15 @@ Symbol | Range | Meaning
 - This is log-loss. <!-- .element: class="fragment" -->
 
 
-### Illustration
+### Cost curves
 
 - Calibration: poor (left), perfect (right). 
 - Cost scale: arithmetic (blue), harmonic (red). 
 
-![Cost plot](img/BC-LL-left.png)  <!-- .element height="30%" width="30%" -->
-![Perfect calibration](img/BC-LL-right.png)   <!-- .element height="30%" width="30%" -->
+![Cost plot](img/BC-LL-left.png)  <!-- .element height="40%" width="40%" -->
+![Perfect calibration](img/BC-LL-right.png)   <!-- .element height="40%" width="40%" -->
 
 Log-loss emphasises extreme values of $c$.  <!-- .element: class="fragment" -->
-
-
-### Sampled cost parameters
-
-![Arithmetic](img/bc.png)  <!-- .element height="40%" width="40%" -->
-![Harmonic](img/dc.png)   <!-- .element height="40%" width="40%" -->
-
-Left: arithmetic; right: harmonic.
 
 
 ### More here
@@ -363,80 +328,191 @@ Left: arithmetic; right: harmonic.
 
 ----
 
-## Towards *Measurement Theory* for ML
+## Scales, units, dimensions and types
 
-![M1](img/M1.png)
+Perhaps surprisingly, there isn't a definitive framework to link all these concepts together. 
+We'll look at it from a few more perspectives: 
 
-*Concatenate then measure* gives the same result as **measure then calculate**. 
-
-
-### Measurements on Confusion Matrices
-
-$$
-\begin{array}{lccc}
-\hline
-           & \text{Predicted}\ + & \text{Predicted}\ - &     \\\\ \hline
-\text{Actual}\ + & TP_i            & FN_i            & Pos_i \\\\
-\text{Actual}\ - & FP_i            & TN_i            & Neg_i \\\\
-           & PPos_i          & PNeg_i          & N_i  \\\\ \hline
-\end{array}
-$$
-
-Assume we have two of these, $C_1$ and $C_2$ 
-(e.g. as obtained in two-fold cross-validation) 
-and their cell-wise sum $C_1 \circ C_2$. 
+- Levels of measurement
+- The physics perspective
+- The computer science perspective
 
 
-### Accuracy
+## Levels of measurement
 
-$$
-\begin{align}
-acc(C_i) &= \frac{TP_i+TN_i}{N_i}, i=1,2 \\\\
-acc(C_1 \circ C_2) &= \frac{\sum_i TP_i+\sum_i TN_i}{\sum_i N_i} \\\\
-&= \frac{N_1}{N}acc(C_1) + \frac{N_2}{N}acc(C_2) 
-\end{align}
-$$
+![Stevens (1946)](img/Stevens1946.gif)  <!-- .element height="20%" width="20%" -->
+![Stevens' levels](img/StevensTable.png)  <!-- .element height="65%" width="65%" -->
 
-This is a weighted average where the weights do not depend on the performance of the two models (and can be made uniform, as in cross-validation). 
+Early proposal from a psychologist [(Stevens, 1946)](https://www.jstor.org/stable/1671815), still influential although somewhat rigid and limited.
 
 
-### True/false positive rate, recall
+### Stevens' typology
 
-$$
-\begin{align}
-tpr(C_i) &= \frac{TP_i}{Pos_i}, i=1,2 \\\\
-tpr(C_1 \circ C_2) &= \frac{\sum_i TP_i}{\sum_i Pos_i} \\\\
-&= \frac{Pos_1}{Pos}tpr(C_1) + \frac{Pos_2}{Pos}tpr(C_2) 
-\end{align}
-$$
+Scale type | Description | Transformations
+---|---|---
+Nominal | no order, no unit | permutation
+Ordinal | order, no unit | monotone
+Interval | can choose unit and zero | affine
+Ratio | fixed zero, can choose unit | linear
 
-Again, a weighted average with weights that can be determined in advance
-(or made uniform, as in stratified cross-validation). 
+The appropriate scale type is determined by the transformation furthest down the list which is still "meaningful". 
 
 
-### Precision is different 
+### Admissible statistics
 
-$$
-\begin{align}
-prec(C_i) &= \frac{TP_i}{PPos_i}, i=1,2 \\\\
-prec(C_1 \circ C_2) &= \frac{\sum_i TP_i}{\sum_i PPos_i} \\\\
-&= \frac{PPos_1}{PPos}prec(C_1) + \frac{PPos_2}{PPos}prec(C_2) 
-\end{align}
-$$
+Scale type | Statistics
+---|---|---
+Nominal | mode
+Ordinal | median, quantile, range
+Interval | arithmetic mean, variance
+Ratio | geometric mean, coefficient of variation
 
-Now, *the weights are themselves measurements*, 
-without which the concatenated value cannot be calculated from the component values. 
+Each scale type inherits statistics from levels above.
 
 
-### Hence, F-score is different 
+### Discussion
 
-$$
-\begin{align}
-Fscore(C_1 \circ C_2) &= \frac{Pos_1+PPos_1}{Pos+PPos}Fscore(C_1) \nonumber \\\\ &+ \frac{Pos_2+PPos_2}{Pos+PPos}Fscore(C_2) 
-\end{align}
-$$
+1. Many statisticians challenge the rigid connection between scale types and admissible statistics.
+  - E.g., Spearman's rank correlation statistic would not be admissible for ordinal data. 
+2. Common scales do not fit well: 
+  - scales bounded from both sides; 
+  - scales with a fixed unit; 
+  - integer measurements. 
 
-- [Flach, P., 2019. Performance Evaluation in Machine Learning: The Good, The Bad, The Ugly and The Way Forward. In 33rd AAAI Conference on Artificial Intelligence.](https://aaai.org/ojs/index.php/AAAI/article/view/5055)
+Such scales abound in machine learning!  <!-- .element: class="fragment" -->
+
+
+### Alternative typologies
+
+[Mosteller and Tukey (1977)](https://books.google.co.uk/books?id=n4dYAAAAMAAJ): 
+*Names*, 
+*Grades* (e.g., beginner, intermediate, advanced), 
+*Ranks* (1, 2, ...), 
+*Counted fractions* (e.g., percentages), 
+*Counts* (non-negative integers), 
+*Amounts* (non-negative real numbers), 
+*Balances* (unbounded, positive or negative values).
+
+[Chrisman (1998)](https://doi.org/10.1559/152304098782383043): 
+*Nominal*, 
+*Graded membership* (e.g., fuzzy sets), 
+*Ordinal*, 
+*Interval*, 
+*Log-interval*, 
+*Extensive ratio*, 
+*Cyclical ratio* (e.g., angles or time of day)
+*Derived ratio*, 
+*Counts*, 
+*Absolute* (e.g., probabilities). 
+
+
+## The physics perspective
+
+- Physical quantities have an associated **dimension** [(Fourier, 1822)](https://books.google.co.uk/books?id=No8IAAAAMAAJ&pg=PA128#v=onepage&q&f=false). 
+- In order to be compared and aggregated, quantities need to be *commensurable* (have the same dimension). 
+  - Aggregation is additive by convention.
+- Incommensurable quantities may be multiplied and divided, giving new derived dimensions. 
+  - E.g. pressure has dimension $M L^{-1} T^{-2}$
+  - SI units Pascal = Newton/m$^2$ = kg/(m*s$^2$).
+
+
+### Discussion
+
+- Dimensions can cancel, leading to dimensionless quantities
+  - E.g., angle is a ratio of lengths, hence dimensionless; but it has units (radians, degrees). 
+  - Sometimes units also cancel, e.g. ABV has unit ml ethanol per 100 ml fluid (percentage). 
+- Transcedental functions ($\exp$, $\sin$ etc.) require dimensionless and unitless quantities. 
+  - E.g., $\log V$ where $V$ has dimension $L^3$ should be thought of as $\log (V/v)$ where $v$ is a unit of volume. 
+
+
+## How do we build on this in ML?
+
+Desiderata
+
+
+### In ML, "dimensionless" quantities are everywhere
+
+- relative frequencies, probabilities, evaluation metrics...
+- Still, we treat derived quantities such as $\log p$ as having a unit (bits, nats, log-likelihood). 
+- We also have different concatenation operators, such as $p_1+p_2$ for the union of mutually exclusive events, $p_1 \cdot p_2$ for the joint probability of independent events. 
+
+
+### Scoring rules
+
+- *Scoring rule* $\phi(p,y)$ returns the loss of predicting $p$ for class $1$ when the true class is $y$
+  - `$\phi : \mathbb{P} \times \{0,1\} \mapsto \mathbb{R}^+$`
+- *Expected score* $s(p,q) = \mathbb{E}_{y \sim q} \phi(p,y)$
+  - `$s : \mathbb{P} \times \mathbb{P} \mapsto \mathbb{R}^+$`
+- *Divergence* $d(p,q) = s(p,q) - s(q,q)$
+  - `$d : \mathbb{P} \times \mathbb{P} \mapsto \mathbb{R}^+$`
+- (generalised) *Entropy* $e(q) = s(q,q)$
+  - `$e : \mathbb{P} \mapsto \mathbb{R}^+$`
+
+
+### Scoring rules (cont.)
+
+ | Logarithmic | Quadratic
+---|---|---
+$\phi(p,y)$ | $-\log p$ | $(p-1)^2$
+$s(p,q)$ | $-q\log p$ | $p(1-q)+q(1-p)$
+$d(p,q)$ | $-q\log p/q$ | $(p-q)^2$
+$e(q)$ | $-q\log q$ | $q(1-q)$
+
+
+### Abstract data types to the rescue!
+
+[![xpecBits Haskell code](img/xpecBits.tiff)  <!-- .element height="80%" width="80%" -->](https://repl.it/repls/ThoughtfulWarlikeRuntimelibrary)
+
+----
+
+## You can't always measure what you want
+
+
+## Latent variable models
+
+- Psychologists have long understood that people's abilities (and the difficulty of a task) are not directly observable and need to be estimated. 
+  - Item-response theory, factor analysis
+- We can adapt those models to machine learning, to estimate ability of classifiers as well as difficulty of instances and datasets. 
+
+
+### Item-Response Theory
+
+![IRT](img/IRT.pdf)  <!-- .element height="40%" width="40%" -->
+
+$E[x_{ij}|\delta_j,a_j] = \frac{1}{1+\exp(-a_j(\theta_i-\delta_j))}$
+
+
+### Beta-IRT
+
+![Beta-IRT](img/BIRT.pdf)  <!-- .element height="40%" width="40%" -->
+
+$E[p_{ij}|\delta_j,a_j] = \frac{1}{1+\left(\frac{\delta_i}{\theta_j}\cdot\frac{1-\theta_j}{1-\delta_i} \right)^{a_j}}$
+
+
+### Adaptive testing
+
+Use a trained IRT model to evaluate a new classifier on a small number of datasets. 
+
+1. Start with initial guess of classifier ability.
+2. Choose next dataset using an *item selection criterion*. 
+3. Evaluate classifier and update ability estimation. 
+4. Repeat until stopping criterion is achieved. 
+
+
+### More here
+
+- [Chen, Y., Prudencio, R.B., Diethe, T. and Flach, P., 2019. $\beta^3$-IRT: A New Item Response Model and its Applications. AISTATS 2019.](http://proceedings.mlr.press/v89/chen19b.html)
+- [Song, H., and Flach, P., 2020. Towards Efficient and Robust Model Benchmarks with Item Response Theory and Adaptive Testing. Evaluating Progress in AI workshop at ECAI 2020.](http://dmip.webs.upv.es/EPAI2020/papers/EPAI_2020_paper_7.pdf)
+
+
+## Causal models
+
+Ultimately, empirical ML needs to make *causal* statements:
+
+> Algorithm A outperformed algorithm B **because** the classes were highly imbalanced.
+
+- I.e., if the classes were re-balanced (counterfactual intervention) the difference in performance would disappear.    <!-- .element: class="fragment" -->
+  - NB. In empirical ML we can actually carry out interventions, which is not usually the case in causal inference!   <!-- .element: class="fragment" -->
 
 ----
 
