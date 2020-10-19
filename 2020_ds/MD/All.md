@@ -370,11 +370,11 @@ Ratio | geometric mean, coefficient of variation
 Each scale type inherits statistics from levels above.
 
 
-### Discussion
+### Levels of measurement: discussion
 
 1. Many statisticians challenge the rigid connection between scale types and admissible statistics.
   - E.g., Spearman's rank correlation statistic would not be admissible for ordinal data. 
-2. Common scales do not fit well: 
+2. Many common scales do not fit well: 
   - scales bounded from both sides; 
   - scales with a fixed unit; 
   - integer measurements. 
@@ -416,56 +416,106 @@ Such scales abound in machine learning!  <!-- .element: class="fragment" -->
   - SI units Pascal = Newton/m$^2$ = kg/(m*s$^2$).
 
 
-### Discussion
+### Dimensional analysis: discussion
 
-- Dimensions can cancel, leading to dimensionless quantities
+- Dimensions can cancel, leading to *dimensionless quantities*.
   - E.g., angle is a ratio of lengths, hence dimensionless; but it has units (radians, degrees). 
-  - Sometimes units also cancel, e.g. ABV has unit ml ethanol per 100 ml fluid (percentage). 
-- Transcedental functions ($\exp$, $\sin$ etc.) require dimensionless and unitless quantities. 
-  - E.g., $\log V$ where $V$ has dimension $L^3$ should be thought of as $\log (V/v)$ where $v$ is a unit of volume. 
+  - Sometimes units also cancel, e.g. ABV has unit ml ethanol per 100 ml liquid (percentage). 
+- Transcedental functions ($\exp$, $\sin$ etc.) require dimensionless and *unitless* quantities. 
+  - E.g., $\log V$ where $V$ has dimension $L^3$ should be thought of as $\log (V/v)$ where $v$ is the unit of $V$. 
 
 
 ## How do we build on this in ML?
 
-Desiderata
+- Both perspectives (levels of measurement and dimensional analysis) have interesting features but seem too focused on establishing a 'true' scale type or dimension for a measurement. 
+  - Machine learning needs something more *flexible*. 
+  - In particular, a better treatment of "dimensionless" quantities which are everywhere you look!
+    - relative frequencies, probabilities, evaluation metrics...
 
 
-### In ML, "dimensionless" quantities are everywhere
+### Why we need flexibility
 
-- relative frequencies, probabilities, evaluation metrics...
-- Still, we treat derived quantities such as $\log p$ as having a unit (bits, nats, log-likelihood). 
-- We also have different concatenation operators, such as $p_1+p_2$ for the union of mutually exclusive events, $p_1 \cdot p_2$ for the joint probability of independent events. 
+- Let $p$ be the parameter of a Bernoulli distribution (e.g, coin comes up head with probability $p$). 
+Then
+  - the *variance* of this distribution (i.e., spread around the mean) is $p(1-p)$; 
+  - its *entropy* (i.e., information content of a coin toss on average) is $-p \log p - (1-p) \log (1-p)$. 
+- At first sight these seem very different things, and hence don't share scale, unit, or dimension.   <!-- .element: class="fragment" -->
+  - However, I'm going to put forward an argument that they can be seen as
+different ways of measuring the same thing!   <!-- .element: class="fragment" -->
 
 
-### Scoring rules
+### Context: proper scoring rules
 
 - *Scoring rule* $\phi(p,y)$ returns the loss of predicting $p$ for class $1$ when the true class is $y$
-  - `$\phi : \mathbb{P} \times \{0,1\} \mapsto \mathbb{R}^+$`
+  - `$\phi : \mathbb{P} \times \{0,1\} \mapsto \mathbb{R}$`
+  - often takes the form `$\phi(p,y) = y h(p) + (1-y) h(1-p)$`
 - *Expected score* $s(p,q) = \mathbb{E}_{y \sim q} \phi(p,y)$
-  - `$s : \mathbb{P} \times \mathbb{P} \mapsto \mathbb{R}^+$`
+  - `$s : \mathbb{P} \times \mathbb{P} \mapsto \mathbb{R}$`
+  - with the above form of $\phi$: `$s(p,q) = q h(p) + (1-q) h(1-p)$`
+
+
+### **Generalised** divergence and entropy
+
 - *Divergence* $d(p,q) = s(p,q) - s(q,q)$
-  - `$d : \mathbb{P} \times \mathbb{P} \mapsto \mathbb{R}^+$`
-- (generalised) *Entropy* $e(q) = s(q,q)$
-  - `$e : \mathbb{P} \mapsto \mathbb{R}^+$`
+  - `$d : \mathbb{P} \times \mathbb{P} \mapsto \mathbb{R}$`. 
+  - The scoring rule is (strictly) *proper* if $p=q$ is (sole) minimiser of $d(p,q)$ for a given $q$. 
+  - NB. this turns an interval scale into a ratio scale. 
+- *Entropy* $e(q) = s(q,q)$
+  - `$e : \mathbb{P} \mapsto \mathbb{R}$`
 
 
-### Scoring rules (cont.)
+### Logarithmic scoring rule
 
- | Logarithmic | Quadratic
----|---|---
-$\phi(p,y)$ | $-\log p$ | $(p-1)^2$
-$s(p,q)$ | $-q\log p$ | $p(1-q)+q(1-p)$
-$d(p,q)$ | $-q\log p/q$ | $(p-q)^2$
-$e(q)$ | $-q\log q$ | $q(1-q)$
+$$
+\begin{align}
+h(p) &= -\log p  \\\\
+\phi(p,y) &= -y \log p - (1-y)\log (1-p)  \\\\
+s(p,q) &= -q\log p -(1-q)\log (1-p)  \\\\
+d(p,q) &= -q\log \frac{p}{q} - (1-q) \frac{1-p}{1-q}  \\\\
+e(q) &= -q\log q - (1-q)\log (1-q)  \\\\
+\\ \\\\
+\end{align}
+$$
+
+The last two equations are known as *Kullback-Leibler divergence* and *Shannon entropy*. 
+
+
+### Quadratic scoring rule
+
+$$
+\begin{align}
+h(p) &= (1-p)^2 \\\\
+\phi(p,y) &= y(1-p)^2+(1-y)p^2 \\\\
+s(p,q) &= q(1-p)^2+(1-q)p^2 \\\\
+d(p,q) &= (p-q)^2 \\\\
+e(q) &= q(1-q) \\\\
+\\ \\\\
+\end{align}
+$$
+
+This scoring rule is also known as the *Brier score* [(Brier, 1950)](https://web.archive.org/web/20171023012737/https://docs.lib.noaa.gov/rescue/mwr/078/mwr-078-01-0001.pdf). 
+
+
+### And therefore...
+
+- Bernoulli variance and Shannon entropy are both realisations of generalised entropy, using different scoring rules. 
+  - It would therefore make sense to treat them as having the same "type", at least from this perspective. 
+- BTW Not a big surprise for (decision) tree lovers, as 
+  - Bernoulli variance aka Gini index is one way of measuring impurity of a leaf (as used in CART); 
+  - Shannon entropy is another (as used in ID3 and C4.5). 
 
 
 ### Abstract data types to the rescue!
 
-[![xpecBits Haskell code](img/xpecBits.tiff)  <!-- .element height="80%" width="80%" -->](https://repl.it/repls/ThoughtfulWarlikeRuntimelibrary)
+[![xpecBits Haskell code](img/xpecBits.png)  <!-- .element height="80%" width="80%" -->](https://repl.it/repls/ThoughtfulWarlikeRuntimelibrary)
 
 ----
 
 ## You can't always measure what you want
+
+- Very briefly: 
+  - latent variable models
+  - causal models
 
 
 ## Latent variable models
@@ -475,16 +525,10 @@ $e(q)$ | $-q\log q$ | $q(1-q)$
 - We can adapt those models to machine learning, to estimate ability of classifiers as well as difficulty of instances and datasets. 
 
 
-### Item-Response Theory
-
-![IRT](img/IRT.pdf)  <!-- .element height="40%" width="40%" -->
-
-$E[x_{ij}|\delta_j,a_j] = \frac{1}{1+\exp(-a_j(\theta_i-\delta_j))}$
-
-
 ### Beta-IRT
 
-![Beta-IRT](img/BIRT.pdf)  <!-- .element height="40%" width="40%" -->
+![Beta-IRT](img/BIRT.png)  <!-- .element height="40%" width="40%" -->
+![ICC](img/beta_ICC_discr_a2.png)  <!-- .element height="44%" width="44%" -->
 
 $E[p_{ij}|\delta_j,a_j] = \frac{1}{1+\left(\frac{\delta_i}{\theta_j}\cdot\frac{1-\theta_j}{1-\delta_i} \right)^{a_j}}$
 
@@ -497,6 +541,11 @@ Use a trained IRT model to evaluate a new classifier on a small number of datase
 2. Choose next dataset using an *item selection criterion*. 
 3. Evaluate classifier and update ability estimation. 
 4. Repeat until stopping criterion is achieved. 
+
+
+### CAT results
+
+![CAT](img/CAT.png)  <!-- .element height="80%" width="80%" -->
 
 
 ### More here
@@ -514,7 +563,6 @@ Ultimately, empirical ML needs to make *causal* statements:
 - I.e., if the classes were re-balanced (counterfactual intervention) the difference in performance would disappear.    <!-- .element: class="fragment" -->
   - NB. In empirical ML we can actually carry out interventions, which is not usually the case in causal inference!   <!-- .element: class="fragment" -->
 
-----
 
 ## Outlook
 
@@ -528,5 +576,5 @@ Proper treatment of performance evaluation in machine learning (and AI more gene
 
 Part of this work was funded through a [project with the Alan Turing Institute](https://www.turing.ac.uk/research/research-projects/measurement-theory-data-science-and-ai). 
 
-Many thanks to Jose Hernandez-Orallo, Kacper Sokol, Meelis Kull, Tom Diethe, Yu Chen, Telmo Filho, Hao Song and many others.  <!-- .element: class="fragment" -->
+Many thanks to Jose Hernandez-Orallo, Kacper Sokol, Meelis Kull, Tom Diethe, Yu Chen, Ricardo Prudencio, Telmo Filho, Miquel Perello-Nieto, Hao Song and many others.  <!-- .element: class="fragment" -->
 
