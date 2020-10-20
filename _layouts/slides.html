@@ -40,6 +40,9 @@
     {% if site.author %}
     <h4>{{ site.author }}{% if page.affiliation %}&nbsp;{{ page.affiliation }}{% elsif site.affiliation %}&nbsp;{{ site.affiliation }}{% endif %}</h4>
     {% endif %}
+    {% if page.subdir %}
+    	<a href="{{ site.website }}{{ site.baseurl }}{{ page.subdir }}">{{ site.website }}{{ site.baseurl }}{{ page.subdir }}</a>
+    {% endif %}
 		</section>
 
         {{ content }}
