@@ -9,7 +9,7 @@ Measurements are relevant in machine learning and discovery science for at least
 
 ### Measuring things is easy, right?
 
-Using a calibrated measuring instrument (e.g., a ruler) we map the object under measurement $a$ to a real number $M(a).
+Using a calibrated measuring instrument (e.g., a ruler) we map the object under measurement $a$ to a real number $M(a)$.
 
 This mapping should be such that if I *concatenate* two objects $a \circ b$ there should be a corresponding numerical operation $\oplus$ on the measurements (e.g., addition), establishing a **scale**. 
 
