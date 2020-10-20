@@ -27,7 +27,7 @@ Let's look at some examples.
 
 ### Last weekend...
 
-...I made two cycling trips. 
+...I went on two bicycle rides. 
 On Saturday my average speed was 20 km/h, 
 on Sunday it was 30 km/h. 
 
@@ -40,7 +40,7 @@ What can I say about the two trips?
 
 ### The weekend before...
 
-...I also made two trips with average speeds 20 km/h and 30 km/h. 
+...I also did two rides with average speeds 20 km/h and 30 km/h. 
 
 - This time I calculated my overall average speed as 24 km/h. 
 What can I say about these two trips? 
