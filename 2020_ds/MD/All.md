@@ -16,7 +16,7 @@ This mapping should be such that if I *concatenate* two objects $a \circ b$ ther
 ![M1](img/M1.png)   <!-- .element height="50%" width="50%" -->
 
 
-### If I can measure, I can average
+### If I can concatenate, I can average
 
 *Averaging* can also be understood in terms of concatenation: we are looking for $M(c)$ for some $c$ such that $M(a \circ b) = M(c \circ c)$.
 
@@ -31,29 +31,31 @@ Let's look at some examples.
 On Saturday my average speed was 20 km/h, 
 on Sunday it was 30 km/h. 
 
-- I calculated my overall average speed as 24 km/h. 
-What can I say about the two trips?   <!-- .element: class="fragment" -->
-  1. They were equally far.   <!-- .element: class="fragment" -->
-  2. They were equally long.   <!-- .element: class="fragment" -->
-  3. Neither.   <!-- .element: class="fragment" -->
+- Concatenating the two trips, I calculated my overall average speed as 25 km/h. 
+What can I say about the two trips?
+  1. They were equally far (in distance).
+  2. They were equally long (in time).  **CORRECT!** <!-- .element: class="fragment" -->
+  3. Neither.   
 
 
 ### The weekend before...
 
 ...I also made two trips with average speeds 20 km/h and 30 km/h. 
 
-- This time I calculated my overall average speed as 25 km/h. 
+- This time I calculated my overall average speed as 24 km/h. 
 What can I say about these two trips? 
-  1. They were equally far.   <!-- .element: class="fragment" -->
-  2. They were equally long.   <!-- .element: class="fragment" -->
-  3. Neither.   <!-- .element: class="fragment" -->
+  1. They were equally far (in distance).  **CORRECT!** <!-- .element: class="fragment" -->
+  2. They were equally long (in time).
+  3. Neither.   
 
 
 ### Means and weighted means
 
-**Segment 1**: distance $d_1$, time $t_1$, velocity $v_1=d_1/t_1$
-**Segment 2**: distance $d_2$, time $t_2$, velocity $v_2=d_2/t_2$
-**Overall**: distance $d=d_1+d_2$, time $t=t_1+t_2$, velocity $v=(d_1+d_2)/(t_1+t_2)$
+**Trip 1**: distance $d_1$, time $t_1$, velocity $v_1=d_1/t_1$.
+
+**Trip 2**: distance $d_2$, time $t_2$, velocity $v_2=d_2/t_2$.
+
+**Overall**: distance $d=d_1+d_2$, time $t=t_1+t_2$, velocity $v=(d_1+d_2)/(t_1+t_2)$.
 
 - $t_1=t_2 \Rightarrow v = (v_1+v_2)/2 = AM(v_1,v_2)$ <!-- .element: class="fragment" -->
   - or in general: $v = {\color{red}{(t_1/t)}}\cdot v_1 + {\color{red}{(t_2/t)}}\cdot v_2$ <!-- .element: class="fragment" -->
@@ -95,11 +97,11 @@ On two other test sets C and D, the classifier achieves 70% and 80% *recall*
 
 - When I combine C and D into a single test set
 and re-run the classifier its recall is 75%.
-What can I say about C and D?   <!-- .element: class="fragment" -->
-  1. They contain the same number of instances.   <!-- .element: class="fragment" -->
-  2. They contain the same number of positives.   <!-- .element: class="fragment" -->
-  3. Both.   <!-- .element: class="fragment" -->
-  4. Neither.   <!-- .element: class="fragment" -->
+What can I say about C and D?
+  1. They contain the same number of instances.
+  2. They contain the same number of positives.
+  3. Both.
+  4. Neither.
 
 
 ### Three machine learning examples (3)
@@ -111,20 +113,20 @@ On yet other test sets E and F, the classifier achieves 70% and 80% *precision*
 
 - When I combine E and F into a single test set
 and re-run the classifier its precision is 75%.
-What can I say about E and F?   <!-- .element: class="fragment" -->
-  1. They contain the same number of instances.   <!-- .element: class="fragment" -->
-  2. They contain the same number of positives.   <!-- .element: class="fragment" -->
-  3. Both.   <!-- .element: class="fragment" -->
-  4. Neither.   <!-- .element: class="fragment" -->
+What can I say about E and F?
+  1. They contain the same number of instances.
+  2. They contain the same number of positives.
+  3. Both.
+  4. Neither.
 
 
 ### Correct answers
 
-(Q1: 1) $acc(A \circ B) = AM(acc(A),acc(B))$ implies $A$ and $B$ contain the same number of instances.   <!-- .element: class="fragment" -->
+(Q1: 1) $acc(A \circ B) = AM(acc(A),acc(B))$ implies A and B contain *the same number of instances*.
 
-(Q2: 2) $tpr(C \circ D) = AM(tpr(C),tpr(D))$ implies $C$ and $D$ contain the same number of positives.   <!-- .element: class="fragment" -->
+(Q2: 2) $tpr(C \circ D) = AM(tpr(C),tpr(D))$ implies C and D contain *the same number of positives*.
 
-(Q3: 4) $prec(E \circ F) = AM(prec(E),prec(F))$ implies the classifier makes the same number of positive predictions on $E$ and $F$.   <!-- .element: class="fragment" -->
+(Q3: 4) $prec(E \circ F) = AM(prec(E),prec(F))$ implies **the classifier makes the same number of positive predictions on E and F**.
 
 
 ### What's my point? 
@@ -202,7 +204,7 @@ $$
 
 $$F_{\beta} = \frac{(\beta^2+1) TP}{(\beta^2+1) TP + \beta^2 FN + FP}$$
 
-$$1/F_{\beta} = \frac{\beta^2}{\beta^2+1} 1/rec + \frac{1}{\beta^2+1} 1/prec$$   <!-- .element: class="fragment" -->
+$$1/F_{\beta} = \frac{\beta^2}{\beta^2+1} 1/rec + \frac{1}{\beta^2+1} 1/prec$$
 
 
 ### Fixing PR curves through scale transformations
@@ -215,7 +217,13 @@ rec  &= TP/(TP+FN) \rightarrow 1/rec  = 1+FN/TP \\\\
 \\ \\\\
 \end{align}
 $$
-2. Map $[1,1/\pi]$ back to unit interval: 
+2. Clip $[1,\infty]$ to $[1,1/\pi]$. 
+$$
+\begin{align}
+\\ \\\\
+\end{align}
+$$  <!-- .element: class="fragment" -->
+3. Map $[1,1/\pi]$ back to unit interval: 
 $$
 \begin{align}
 precG &= \frac{prec-\pi}{(1-\pi)prec} = 1 - \frac{\pi}{1-\pi} FP/TP \\\\
@@ -244,6 +252,17 @@ PRG curves have a meaningful area related to expected $F_1$ score, and their con
 - These are most commonly used to evaluate *probability estimates* against 'ideal' probabilities 0 and 1. 
 - Alternatively, they can be interpreted as *expected misclassification loss*, aggregating over all possible **skews** (class prevalence or cost proportion). 
 - From the latter perspective they differ only in the *scale* on which skews are measured. 
+
+
+### Cost-sensitive classification
+
+- Let `$c_+$` be the cost of misclassifying a positive (i.e., a false negative) 
+and `$c_-$` the cost of misclassifying a negative (i.e., a false positive). 
+- `$c=\frac{c_{+}}{c_{+}+c_{-}}$` is the cost proportion. 
+- Two ways to derive `$c_+,c_-$` from $c$: 
+  - set a fixed budget `$b=c_++c_-$`, then `$c_+=bc$` and `$c_-=b(1-c)$`.
+  - set a fixed budget `$d=1/(1/c_++1/c_-)$`, then `$c_+=d/(1-c)$` and `$c_-=d/c$`.
+- Varying $c$ uniformly in $[0,1]$ and setting the decision threshold equal to $c$, the first gives squared loss as expected loss, the second log-loss.    <!-- .element: class="fragment" -->
 
 
 ### Notation
@@ -329,6 +348,8 @@ Log-loss emphasises extreme values of $c$.  <!-- .element: class="fragment" -->
 ----
 
 ## Scales, units, dimensions and types
+
+So we've seen the use of a mathematical treatment of scales. What about things like units and dimensions? 
 
 Perhaps surprisingly, there isn't a definitive framework to link all these concepts together. 
 We'll look at it from a few more perspectives: 
