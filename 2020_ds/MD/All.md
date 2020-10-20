@@ -421,7 +421,7 @@ Such scales abound in machine learning!  <!-- .element: class="fragment" -->
 - Dimensions can cancel, leading to *dimensionless quantities*.
   - E.g., angle is a ratio of lengths, hence dimensionless; but it has units (radians, degrees). 
   - Sometimes units also cancel, e.g. ABV has unit ml ethanol per 100 ml liquid (percentage). 
-- Transcedental functions ($\exp$, $\sin$ etc.) require dimensionless and *unitless* quantities. 
+- Transcendental functions ($\exp$, $\sin$ etc.) require dimensionless and *unitless* quantities. 
   - E.g., $\log V$ where $V$ has dimension $L^3$ should be thought of as $\log (V/v)$ where $v$ is the unit of $V$. 
 
 
@@ -505,17 +505,32 @@ This scoring rule is also known as the *Brier score* [(Brier, 1950)](https://web
   - Shannon entropy is another (as used in ID3 and C4.5). 
 
 
-### Abstract data types to the rescue!
+### Scoring rules in a typed functional language
+
+[![Scoring rules](img/genEntropy.png)  <!-- .element height="70%" width="70%" -->](https://repl.it/repls/KeyBewitchedRoute)
+
+
+### Shannon entropy as expected number of bits
 
 [![xpecBits Haskell code](img/xpecBits.png)  <!-- .element height="80%" width="80%" -->](https://repl.it/repls/ThoughtfulWarlikeRuntimelibrary)
 
+
+### What's my point?
+
+- Abstract data types are more flexible than dimensions or scale types as they can be adapted to the situation of interest. 
+  - provide relevant meta-data about measurements 
+  - link to useful operations. 
+- In particular, higher-order functional languages allow reasoning with and about types. 
+  - This provides a formal language and logic for measurement meta-data. 
+- The challenge is to develop a generally agreed ["Systeme international"](https://en.wikipedia.org/wiki/International_System_of_Units) of ML measurements. 
+
 ----
 
-## You can't always measure what you want
+## And finally...
 
-- Very briefly: 
-  - latent variable models
-  - causal models
+- You can't always measure what you want!
+  - Latent variable models
+  - Causal models
 
 
 ## Latent variable models
