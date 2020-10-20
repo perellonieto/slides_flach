@@ -1,9 +1,9 @@
 # Site settings
 title: Peter's Slides
 email: Peter.Flach@bristol.ac.uk
-website: "http://flach.github.io/"
+website: "http://flach.github.io"
 #description: > # this means to ignore newlines until "baseurl:"
-baseurl: "slides/" # the subpath of your site, e.g. /blog/
+baseurl: "/slides/" # the subpath of your site, e.g. /blog/
 author: Peter Flach
 affiliation: (U Bristol and Alan Turing Institute, UK)
 style: "pf"
