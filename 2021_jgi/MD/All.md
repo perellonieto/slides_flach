@@ -1,10 +1,42 @@
 ## Why should you care about measurement?
 
-Measurements are relevant in machine learning and discovery science for at least two reasons:
-- *Features* are often are measurements on some scale, and we need to understand the properties of the scale, admissible operations, etc.
-  - E.g., the arithmetic mean is not always appropriate.
-- *Performance metrics* are also measurements, and hence the same applies!
-  - Taking expectations, area under curve etc. may not be coherent.
+Measurements are relevant in data science and AI for at least two reasons:
+- *Features* are often are measurements on some scale, which dictates admissible statistics and operations.
+  - E.g., taking the expectation assumes a linear scale.
+- *Performance metrics* are also measurements, and hence the same applies. 
+
+Perhaps surprisingly, there are many open questions! <!-- .element: class="fragment" -->
+
+
+### Performance measurement is easy...
+
+If I split a data set in two or more parts, is a classifier's *accuracy* on the entire data set equal to the average* of the accuracies on the parts? 
+
+Yes -- provided the parts are of equal size (e.g., cross-validation).  <!-- .element: class="fragment" -->
+
+What about per-class recall?  <!-- .element: class="fragment" -->
+
+Yes -- provided the parts have the same class distribution (e.g., stratified CV). <!-- .element: class="fragment" -->
+
+*To be precise: the arithmetic mean. <!-- .element: class="fragment" -->
+
+
+### ...or is it?
+
+Is a classifier's *precision* on the entire data set equal to the average of the precisions on the parts? 
+
+**IT IS NOT!**  <!-- .element: class="fragment" -->
+
+Unless the classifier's predictions are equally distributed on each part, which is (a) very unlikely, and (b) not under the experimenter's control.  <!-- .element: class="fragment" -->
+
+The same applies a fortiori to F-score, which aggregates recall and precision.  <!-- .element: class="fragment" -->
+
+
+### An early result: Precision-Recall-Gain curves
+
+![from ROC via PR to PRG](img/PRG.png)
+
+[Flach, P. and Kull, M., 2015. Precision-recall-gain curves: PR analysis done right. NIPS 2015.](http://people.cs.bris.ac.uk/~flach/PRGcurves)
 
 
 ### Measuring things is easy, right?
