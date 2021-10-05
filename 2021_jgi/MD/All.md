@@ -220,20 +220,31 @@ Such scales abound in machine learning!  <!-- .element: class="fragment" -->
 
 ![IRT](img/IRT1.png)
 
+- $\theta_i$: ability of participant $i$
+- $\delta_j$, $a_j$: difficulty & discrimination of item $j$
+- $x_{ij}$: binary response (correct/incorrect)
 
-### Beta-IRT: continuous responses, abilities & difficulties $\in [0,1]$
+
+### Beta-IRT
 
 ![Beta-IRT](img/BIRT1.png)
+
+- continuous responses $p_{ij}$
+- abilities & difficulties $\in [0,1]$
 
 
 ### Beta-IRT: flexible Item Characteristic Curves
 
 ![Beta-IRT ICC](img/BIRT2.png)
 
+- discrimination $a_j$ can be negative, indicating an item that confuses high-ability participants!  <!-- .element: class="fragment" -->
+
 
 ### Idea 1:  Identifying noisy examples
 
-![BIRT for noisy examples](img/BIRT3.png)
+![BIRT for noisy examples](img/BIRT3.png) <!-- .element height="80%" width="80%" -->
+
+- [Chen, Y., Prudencio, R.B., Diethe, T. and Flach, P., 2019. $\beta^3$-IRT: A New Item Response Model and its Applications. AISTATS 2019.](http://proceedings.mlr.press/v89/chen19b.html)
 
 
 ### Idea 2:  Adaptive testing
@@ -248,12 +259,8 @@ Use a trained IRT model to evaluate a new classifier on a small number of datase
 
 ### CAT results
 
-![CAT](img/CAT.png)  <!-- .element height="80%" width="80%" -->
+![CAT](img/CAT.png)  <!-- .element height="70%" width="70%" -->
 
-
-### More here
-
-- [Chen, Y., Prudencio, R.B., Diethe, T. and Flach, P., 2019. $\beta^3$-IRT: A New Item Response Model and its Applications. AISTATS 2019.](http://proceedings.mlr.press/v89/chen19b.html)
 - [Song, H. and Flach, P., 2020. Efficient and Robust Model Benchmarks with Item Response Theory and Adaptive Testing. Int J Interactive Multimedia and AI 2021.](https://ijimai.org/journal/bibcite/reference/2901)
 
 ----
