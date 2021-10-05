@@ -1,7 +1,7 @@
 ## Why should you care about measurement?
 
 Measurements are relevant in data science and AI for at least two reasons:
-- *Features* are often are measurements on some scale, which dictates admissible statistics and operations.
+- *Features* often are measurements on some scale, which dictates admissible statistics and operations.
   - E.g., taking the expectation assumes a linear scale.
 - *Performance metrics* are also measurements, and hence the same applies. 
 
@@ -10,7 +10,7 @@ Measurements are relevant in data science and AI for at least two reasons:
 
 ### Performance measurement is easy...
 
-If I split a data set in two or more parts, is a classifier's *accuracy* on the entire data set equal to the average* of the accuracies on the parts? 
+If I split a data set in two or more parts, is a classifier's *accuracy* on the entire data set equal to the average* of the accuracies on the separate parts? 
 
 Yes -- provided the parts are of equal size (e.g., cross-validation).  <!-- .element: class="fragment" -->
 
