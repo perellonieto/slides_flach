@@ -29,7 +29,7 @@
 
     <div class="reveal" style="margin-top: -50px; padding-top: 50px;">
       <div style="position: absolute; bottom: 1em; width: 100%; font-size: 0.4em; text-align: center;">
-        {{ page.title }} | {{ site.author }}{% if page.affiliation %}&nbsp;{{ page.affiliation }}{% elsif site.affiliation %}&nbsp;{{ site.affiliation }}{% endif %}
+        {{ page.title }} | {{ site.author }}{% if page.affiliation %}&nbsp;{{ page.affiliation }}{% elsif site.affiliation %}&nbsp;{{ site.affiliation }}{% endif %}{% if page.footernote %}&nbsp;|&nbsp;{{ page.footernote }}{% elsif site.footernote %}&nbsp;|&nbsp;{{ site.footernote }}{% endif %}
       </div>
       <div class="slides">
 
