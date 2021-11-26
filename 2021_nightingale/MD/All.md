@@ -27,7 +27,7 @@ Is a classifier's *precision* on the entire data set equal to the average of the
 
 **IT IS NOT!**  <!-- .element: class="fragment" -->
 
-Unless the classifier's predictions are equally distributed on each part, which is (a) very unlikely, and (b) not under the experimenter's control.  <!-- .element: class="fragment" -->
+Unless the classifier's predictions are equally distributed over the classes on each part, which is (a) very unlikely, and (b) not under the experimenter's control.  <!-- .element: class="fragment" -->
 
 The same applies a fortiori to F-score, which aggregates recall and precision.  <!-- .element: class="fragment" -->
 
