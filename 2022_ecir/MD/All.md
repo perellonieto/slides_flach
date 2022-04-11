@@ -40,7 +40,7 @@ Common definition: $F_1 = \frac{2prec\cdot rec}{prec+rec}$.
 
 As harmonic mean: $\frac{1}{F_1} = \left(\frac{1}{rec} + \frac{1}{prec}\right)/2$. <!-- .element: class="fragment" -->
 
-Peter's preferred definition: $$F_{1} = \frac{TP}{TP + {\color{red}{\frac{FN+FP}{2}}}} = \frac{{\color{red}{2}}TP}{{\color{red}{2}}TP + {\color{red}{FN+FP}}}$$ <!-- .element: class="fragment" -->
+Peter's preferred definition: $$F_{1} = \frac{TP}{TP + {\color{red}{\frac{FN+FP}{2}}}} = \frac{2TP}{2TP + FN+FP}$$ <!-- .element: class="fragment" -->
 
 
 ### $F_1$-score
