@@ -16,7 +16,7 @@ Q1: Why is $F_1$ the *harmonic* mean of precision and recall?
 3. Another reason. <!-- .element: class="fragment" -->
 
 
-### Audience participation!
+### More audience participation!
 
 Q2: When is $F_1$ preferred over accuracy-based measures (micro/macro-accuracy)?
 
@@ -25,7 +25,7 @@ Q2: When is $F_1$ preferred over accuracy-based measures (micro/macro-accuracy)?
 1. Another reason. <!-- .element: class="fragment" -->
 
 
-### Audience participation!
+### Last one, I promise :-)
 
 Q3: If we use $F_{1/2}$, then...
 
