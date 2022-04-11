@@ -6,6 +6,7 @@ website: "http://flach.github.io"
 baseurl: "/slides/" # the subpath of your site, e.g. /blog/
 author: Peter Flach
 affiliation: (U Bristol and Alan Turing Institute, UK)
+footernote: Made with Reveal.js
 style: "pf"
 
 # Build settings
