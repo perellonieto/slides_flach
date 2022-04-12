@@ -6,6 +6,8 @@ I don't know much about IR, but have thought long and hard about performance and
 
 I think some of these ideas extend to IR, but would be very interested to hear your feedback. 
 
+Disclaimer: I am not a statistician!  <!-- .element: class="fragment" -->
+
 
 ### Audience participation!
 
