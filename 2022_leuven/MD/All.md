@@ -190,7 +190,7 @@ Such scales abound in machine learning!  <!-- .element: class="fragment" -->
 
 ## The computer science perspective
 
-- *Abstract data types* can be adapted to the situation of interest.
+- *Abstract data types* can be adapted to the situation.
   - provide relevant *meta-data* about measurements
   - link to useful *operations*.
 - In particular, **higher-order functional languages** such as Haskell allow reasoning with and about types.
@@ -242,7 +242,7 @@ Such scales abound in machine learning!  <!-- .element: class="fragment" -->
 
 ### Idea 1:  Identifying noisy examples
 
-![BIRT for noisy examples](img/BIRT3.png) <!-- .element height="650%" width="650%" -->
+![BIRT for noisy examples](img/BIRT3.png) <!-- .element height="65%" width="65%" -->
 
 - [Chen, Y., Prudencio, R.B., Diethe, T. and Flach, P., 2019. $\beta^3$-IRT: A New Item Response Model and its Applications. AISTATS 2019.](http://proceedings.mlr.press/v89/chen19b.html)
 
@@ -259,7 +259,7 @@ Use a trained IRT model to evaluate a new classifier on a small number of datase
 
 ### CAT results
 
-![CAT](img/CAT.png)  <!-- .element height="60%" width="60%" -->
+![CAT](img/CAT.png)  <!-- .element height="50%" width="50%" -->
 
 - [Song, H. and Flach, P., 2020. Efficient and Robust Model Benchmarks with Item Response Theory and Adaptive Testing. Int J Interactive Multimedia and AI 2021.](https://ijimai.org/journal/bibcite/reference/2901)
 
@@ -271,7 +271,7 @@ Ultimately, empirical ML needs to make *causal* statements:
 
 > Algorithm A outperformed algorithm B **because** the classes were highly imbalanced.
 
-- I.e., if the classes were re-balanced (counterfactual intervention) the difference in performance would disappear.    <!-- .element: class="fragment" -->
+- I.e., with re-balanced classes (counterfactual intervention) the difference in performance would disappear.    <!-- .element: class="fragment" -->
   - NB. In empirical ML we can actually carry out interventions, which makes causal inference a whole lot easier!   <!-- .element: class="fragment" -->
 
 
