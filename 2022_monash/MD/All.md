@@ -14,7 +14,7 @@ If I split a data set in two or more parts, is a classifier's *accuracy* on the 
 
 Yes -- provided the parts are of equal size (e.g., cross-validation).  <!-- .element: class="fragment" -->
 
-What about per-class recall?  <!-- .element: class="fragment" -->
+What about per-class recall ( = true positive rate)?  <!-- .element: class="fragment" -->
 
 Yes -- provided the parts have the same class distribution (e.g., stratified CV). <!-- .element: class="fragment" -->
 
