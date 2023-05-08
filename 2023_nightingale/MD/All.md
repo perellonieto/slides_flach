@@ -1,11 +1,6 @@
 ## Section 1
 
-Measurements are relevant in data science and AI for at least two reasons:
-- *Features* often are measurements on some scale, which dictates admissible statistics and operations.
-  - E.g., taking the expectation assumes a linear scale.
-- *Performance metrics* are also measurements, and hence the same applies. 
-
-[This project](https://www.turing.ac.uk/research/research-projects/measurement-theory-data-science-and-ai) looked at foundational issues, of which there are many! 
+> In the time of ChatGPT, artificial intelligence had woven its way into the very fabric of society. It was as ubiquitous as the air we breathed, and yet its presence was often unnoticed. ChatGPT, a large language model created by OpenAI, was one of the many manifestations of this technological revolution. It could hold conversations with humans, understand natural language, and even generate text that was indistinguishable from that written by a human. But despite its impressive abilities, ChatGPT was not a god-like being, as some had feared. Instead, it was a tool, one that could be harnessed for good or ill depending on the intentions of its users. And so, in the time of ChatGPT, humanity stood at a crossroads, unsure of where this new technology would lead us, but eager to explore its potential.
 
 
 ### Slide 1.1
