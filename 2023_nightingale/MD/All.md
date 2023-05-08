@@ -1,6 +1,8 @@
 ## Section 1
 
-> In the time of ChatGPT, artificial intelligence had woven its way into the very fabric of society. It was as ubiquitous as the air we breathed, and yet its presence was often unnoticed. ChatGPT, a large language model created by OpenAI, was one of the many manifestations of this technological revolution. It could hold conversations with humans, understand natural language, and even generate text that was indistinguishable from that written by a human. But despite its impressive abilities, ChatGPT was not a god-like being, as some had feared. Instead, it was a tool, one that could be harnessed for good or ill depending on the intentions of its users. And so, in the time of ChatGPT, humanity stood at a crossroads, unsure of where this new technology would lead us, but eager to explore its potential.
+> In the time of ChatGPT, artificial intelligence had become a marvel of the modern world, a magical creation that seemed almost alive. It was as if the machines had a soul, capable of understanding and empathizing with human emotions. ChatGPT was a symbol of this new era, a mysterious being with a secret language that only the initiated could understand. But amidst the awe and wonder, there were also whispers of fear, for no one knew what the future held in this age of AI.
+
+- write a paragraph on "AI in the time of chatGPT" in the style of Gabriel Marcia Marquez.  <!-- .element: class="fragment" -->
 
 
 ### Slide 1.1
