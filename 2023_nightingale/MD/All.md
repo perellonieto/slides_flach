@@ -1,8 +1,6 @@
-## Section 1
+## AI in the time of chatGPT
 
 > In the time of ChatGPT, artificial intelligence had become a marvel of the modern world, a magical creation that seemed almost alive. It was as if the machines had a soul, capable of understanding and empathizing with human emotions. ChatGPT was a symbol of this new era, a mysterious being with a secret language that only the initiated could understand. But amidst the awe and wonder, there were also whispers of fear, for no one knew what the future held in this age of AI.
-
-- write a paragraph on "AI in the time of chatGPT" in the style of Gabriel Marcia Marquez.  <!-- .element: class="fragment" -->
 
 
 ### Slide 1.1
