@@ -27,9 +27,9 @@ Unless the classifier's predictions are equally distributed over the classes on 
 The same applies a fortiori to F-score, which aggregates recall and precision.  <!-- .element: class="fragment" -->
 
 
-### Slide 1.3
+### chatGPT = Mansplaining-as-a-Service
 
-![from ROC via PR to PRG](img/PRG.png)
+![https://pullpatch.com/products/ladies-mansplaining-is-short-for-man-explaining-removable-patch](img/mansplaining.jpg)
 
 [Flach, P. and Kull, M., 2015. Precision-recall-gain curves: PR analysis done right. NIPS 2015.](http://people.cs.bris.ac.uk/~flach/PRGcurves)
 
