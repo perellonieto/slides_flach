@@ -35,7 +35,7 @@
 
 		<section>
 		{% if page.title %}<h2>{{ page.title }}</h2>{% endif %}
-    {% if page.coverimage %}<img src="{{ page.coverimage }}" height="300">{% endif %}
+    {% if page.coverimage %}<img src="{{ page.coverimage }}" height="300" align="right">{% endif %}
     {% if page.subtitle %}<h3>{{ page.subtitle }}</h3>{% endif %}
     {% if site.author %}
     <h4>{{ site.author }}{% if page.affiliation %}&nbsp;{{ page.affiliation }}{% elsif site.affiliation %}&nbsp;{{ site.affiliation }}{% endif %}</h4>

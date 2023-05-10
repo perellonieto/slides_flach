@@ -6,7 +6,7 @@
 ### What I will talk about
 
 - [What ChatGPT is -- and isn't](#/2)
-- [ChatGPT's most surprising capabilities](#/3)
+- [ChatGPT's most remarkable capabilities](#/3)
 - [Has AI passed the Turing Test?](#/4)
 - [We need to talk about overconfidence](#/5)
 - [AI in the time of ChatGPT](#/6)
@@ -15,9 +15,17 @@
 
 ## What ChatGPT is -- and isn't
 
+- schematic with two levels: LLM + dialogue model
+- development of instructGPT
+
+
+### chatGPT = Mansplaining-as-a-Service
+
+![https://pullpatch.com/products/ladies-mansplaining-is-short-for-man-explaining-removable-patch](img/mansplaining.jpg)<!-- .element height="70%" width="70%" -->
+
 ----
 
-## ChatGPT's most surprising capabilities
+## ChatGPT's most remarkable capabilities
 
 ----
 
@@ -55,20 +63,6 @@ Is a classifier's *precision* on the entire data set equal to the average of the
 Unless the classifier's predictions are equally distributed over the classes on each part, which is neither likely nor under the experimenter's control.  <!-- .element: class="fragment" -->
 
 The same applies a fortiori to F-score, which aggregates recall and precision.  <!-- .element: class="fragment" -->
-
-
-### chatGPT = Mansplaining-as-a-Service
-
-![https://pullpatch.com/products/ladies-mansplaining-is-short-for-man-explaining-removable-patch](img/mansplaining.jpg)
-
-
-### What I will talk about
-
-- [Scales, units, dimensions and types](#/2)
-  - Perspectives from psychology, physics and computer science
-- [You can't always measure what you want](#/3)
-  - Latent variable models
-- [Conclusions and outlook](#/4)
 
 ----
 
