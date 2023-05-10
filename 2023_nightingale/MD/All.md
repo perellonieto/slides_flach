@@ -19,6 +19,13 @@
 - development of instructGPT
 
 
+### LLM = ultimate predictive text
+
+> I think we have to view this as a—potentially surprising—scientific discovery: that somehow in a neural net like ChatGPT’s it’s possible to capture the essence of what human brains manage to do in generating language.
+
+[Stephen Wolfram: What Is ChatGPT Doing … and Why Does It Work?](https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/)
+
+
 ### chatGPT = Mansplaining-as-a-Service
 
 ![https://pullpatch.com/products/ladies-mansplaining-is-short-for-man-explaining-removable-patch](img/mansplaining.jpg)<!-- .element height="50%" width="50%" -->
@@ -28,6 +35,8 @@
 
 > For the bullshitter [all] bets are off: he is neither on the side of the true nor on the side of the false. His eye is not on the facts at all, as the eyes of the honest man and of the liar are, except insofar as they may be pertinent
 to his interest in getting away with what he says. He does not care whether the things he says describe reality correctly. He just picks them out, or makes them up, to suit his purpose.
+
+Harry Frankfurt, On Bullshit. Princeton University Press, 2005. 
 
 ----
 
