@@ -3,6 +3,36 @@
 > In the time of ChatGPT, artificial intelligence had become a marvel of the modern world, a magical creation that seemed almost alive. It was as if the machines had a soul, capable of understanding and empathizing with human emotions. ChatGPT was a symbol of this new era, a mysterious being with a secret language that only the initiated could understand. But amidst the awe and wonder, there were also whispers of fear, for no one knew what the future held in this age of AI.
 
 
+### What I will talk about
+
+- [What ChatGPT is -- and isn't](#/2)
+- [ChatGPT's most surprising capabilities](#/3)
+- [Has AI passed the Turing Test?](#/4)
+- [We need to talk about overconfidence](#/5)
+- [AI in the time of ChatGPT](#/6)
+
+----
+
+## What ChatGPT is -- and isn't
+
+----
+
+## ChatGPT's most surprising capabilities
+
+----
+
+## Has AI passed the Turing Test?
+
+----
+
+## We need to talk about overconfidence
+
+----
+
+## AI in the time of ChatGPT
+
+----
+
 ### Slide 1.1
 
 If I split a data set in two or more parts, is a classifier's *accuracy* on the entire data set equal to the average* of the accuracies on the separate parts? 
@@ -30,8 +60,6 @@ The same applies a fortiori to F-score, which aggregates recall and precision.  
 ### chatGPT = Mansplaining-as-a-Service
 
 ![https://pullpatch.com/products/ladies-mansplaining-is-short-for-man-explaining-removable-patch](img/mansplaining.jpg)
-
-[Flach, P. and Kull, M., 2015. Precision-recall-gain curves: PR analysis done right. NIPS 2015.](http://people.cs.bris.ac.uk/~flach/PRGcurves)
 
 
 ### What I will talk about
