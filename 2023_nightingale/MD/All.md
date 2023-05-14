@@ -11,6 +11,19 @@
 - [We need to talk about overconfidence](#/5)
 - [AI in the time of ChatGPT](#/6)
 
+
+### Notes
+
+ChatGPT makes mistakes with reasoning and arithmetic. But the surprising thing is it can do reasoning and arithmetic at all. This is somehow teased out of the language data. 
+While reasoning, arithmetic and many other are emergent capabilities, this doesn't mean that they can be achieved perfectly by every larger LMs. 
+Putting linguistic elements together in surprising and potentially novel ways is the essence of language, so "hallucination" shouldn't come as a surprise. "Generate something that looks like a URL/literature reference etc." This exemplifies the need for fact-checking (easy in the case of URLs). 
+Achievements on "human" tasks have three ingredients: machine, human, task. E.g. Deep Blue, Kasparov, chess; AlphaGo, Lee Se Dong, Go. Conclusions should involve the triple: e.g., chess is more suited to algorithmic treatment than we thought. 
+Games like chess and Go have emerged at a sweet spot: it can be played by children, but only few can play it really well. 
+Nobody is surprised if the world champion mental calculation is beaten by a computer; or if the world champion road cycling is beaten by a motorbike. 
+(something about models as a commodity)
+(DNNs' modular design make them particularly suitable for finetuning and transfer learning)
+(something about neuro-symbolic AI?)
+
 ----
 
 ## What ChatGPT is -- and isn't
@@ -26,17 +39,17 @@
 [Stephen Wolfram: What Is ChatGPT Doing ... and Why Does It Work?](https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/)
 
 
-### chatGPT = Mansplaining-as-a-Service
-
-![https://pullpatch.com/products/ladies-mansplaining-is-short-for-man-explaining-removable-patch](img/mansplaining.jpg)<!-- .element height="50%" width="50%" -->
-
-
 ### chatGPT = Bullshit machine
 
 > For the bullshitter [all] bets are off: he is neither on the side of the true nor on the side of the false. His eye is not on the facts at all, as the eyes of the honest man and of the liar are, except insofar as they may be pertinent
 to his interest in getting away with what he says. He does not care whether the things he says describe reality correctly. He just picks them out, or makes them up, to suit his purpose.
 
 Harry Frankfurt, On Bullshit. Princeton University Press, 2005. 
+
+
+### chatGPT = Mansplaining-as-a-Service
+
+![https://pullpatch.com/products/ladies-mansplaining-is-short-for-man-explaining-removable-patch](img/mansplaining.jpg)<!-- .element height="50%" width="50%" -->
 
 ----
 
