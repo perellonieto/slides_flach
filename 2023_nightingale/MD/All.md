@@ -14,6 +14,7 @@
 
 ### Notes
 
+<!--
 ChatGPT makes mistakes with reasoning and arithmetic. But the surprising thing is it can do reasoning and arithmetic at all. This is somehow teased out of the language data. 
 While reasoning, arithmetic and many other are emergent capabilities, this doesn't mean that they can be achieved perfectly by every larger LMs. 
 Putting linguistic elements together in surprising and potentially novel ways is the essence of language, so "hallucination" shouldn't come as a surprise. "Generate something that looks like a URL/literature reference etc." This exemplifies the need for fact-checking (easy in the case of URLs). 
@@ -23,6 +24,9 @@ Nobody is surprised if the world champion mental calculation is beaten by a comp
 (something about models as a commodity)
 (DNNs' modular design make them particularly suitable for finetuning and transfer learning)
 (something about neuro-symbolic AI?)
+
+Foster: these systems are designed to make stuff up
+-->
 
 ----
 
@@ -50,6 +54,13 @@ Harry Frankfurt, On Bullshit. Princeton University Press, 2005.
 ### chatGPT = Mansplaining-as-a-Service
 
 ![https://pullpatch.com/products/ladies-mansplaining-is-short-for-man-explaining-removable-patch](img/mansplaining.jpg)<!-- .element height="50%" width="50%" -->
+
+
+### The aliens have landed
+
+> Sometimes I think it’s as if aliens had landed and people haven’t realized because they speak very good English.
+
+[Geoffrey Hinton in an interview with MIT Technology Review](https://www.technologyreview.com/2023/05/02/1072528/geoffrey-hinton-google-why-scared-ai/)
 
 ----
 
