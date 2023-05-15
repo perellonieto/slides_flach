@@ -36,31 +36,43 @@ Foster: these systems are designed to make stuff up
 - development of instructGPT
 
 
-### LLM = ultimate predictive text
+### The aliens have landed
 
-> I think we have to view this as a -- potentially surprising -- scientific discovery: that somehow in a neural net like ChatGPT's it's possible to capture the essence of what human brains manage to do in generating language.
+> Sometimes I think it's as if aliens had landed and people haven't realized because they speak very good English.
 
-[Stephen Wolfram: What Is ChatGPT Doing ... and Why Does It Work?](https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/)
+[Geoffrey Hinton in an interview with MIT Technology Review](https://www.technologyreview.com/2023/05/02/1072528/geoffrey-hinton-google-why-scared-ai/)
 
 
-### chatGPT = Bullshit machine
+### The ultimate bullshit machine
 
 > For the bullshitter [all] bets are off: he is neither on the side of the true nor on the side of the false. His eye is not on the facts at all, as the eyes of the honest man and of the liar are, except insofar as they may be pertinent
 to his interest in getting away with what he says. He does not care whether the things he says describe reality correctly. He just picks them out, or makes them up, to suit his purpose.
 
-Harry Frankfurt, On Bullshit. Princeton University Press, 2005. 
+[Harry Frankfurt, On Bullshit. Princeton University Press, 2005.](https://press.princeton.edu/books/hardcover/9780691122946/on-bullshit)
 
 
-### chatGPT = Mansplaining-as-a-Service
+### Mansplaining-as-a-Service
 
-![https://pullpatch.com/products/ladies-mansplaining-is-short-for-man-explaining-removable-patch](img/mansplaining.jpg)<!-- .element height="50%" width="50%" -->
+> If someone perceives my responses as mansplaining, I apologize and encourage them to provide specific feedback on how I can improve and be more respectful in my interactions. (chatGPT)
+
+![https://pullpatch.com/products/ladies-mansplaining-is-short-for-man-explaining-removable-patch](img/mansplaining.jpg)<!-- .element align="right" height="50%" width="50%" -->
 
 
-### The aliens have landed
+### Intermezzo: Back to 1997
 
-> Sometimes I think it’s as if aliens had landed and people haven’t realized because they speak very good English.
+![Garry Kasparov against Deep Blue (1997)](img/DeepBlue.jpg)<!-- .element align="right" height="50%" width="50%" -->
 
-[Geoffrey Hinton in an interview with MIT Technology Review](https://www.technologyreview.com/2023/05/02/1072528/geoffrey-hinton-google-why-scared-ai/)
+
+### Real or fake?
+
+![PF & GK](img/kasparov.jpg)<!-- .element align="right" height="50%" width="50%" -->
+
+
+### Capturing the essence of human language
+
+> I think we have to view this as a -- potentially surprising -- scientific discovery: that somehow in a neural net like ChatGPT's it's possible to capture the essence of what human brains manage to do in generating language.
+
+[Stephen Wolfram: What Is ChatGPT Doing ... and Why Does It Work?](https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/)
 
 ----
 
