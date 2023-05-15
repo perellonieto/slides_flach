@@ -36,7 +36,7 @@ Foster: these systems are designed to make stuff up
 - development of instructGPT
 
 
-### The aliens have landed
+### Aliens with good English
 
 > Sometimes I think it's as if aliens had landed and people haven't realized because they speak very good English.
 
@@ -53,9 +53,9 @@ to his interest in getting away with what he says. He does not care whether the 
 
 ### Mansplaining-as-a-Service
 
-> If someone perceives my responses as mansplaining, I apologize and encourage them to provide specific feedback on how I can improve and be more respectful in my interactions. (chatGPT)
+> If someone perceives my responses as mansplaining, I apologize and encourage them to provide specific feedback on how I can improve and be more respectful in my interactions. (chatGPT)<!-- .element align="left" -->
 
-![https://pullpatch.com/products/ladies-mansplaining-is-short-for-man-explaining-removable-patch](img/mansplaining.jpg)<!-- .element align="right" height="50%" width="50%" -->
+![https://pullpatch.com/products/ladies-mansplaining-is-short-for-man-explaining-removable-patch](img/mansplaining.jpg)<!-- .element align="right" height="25%" width="25%" -->
 
 
 ### Intermezzo: Back to 1997
