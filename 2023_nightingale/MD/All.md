@@ -53,14 +53,14 @@ to his interest in getting away with what he says. He does not care whether the 
 
 ### Mansplaining-as-a-Service
 
-![https://pullpatch.com/products/ladies-mansplaining-is-short-for-man-explaining-removable-patch](img/mansplaining.jpg)<!-- .element align="right" height="25%" width="25%" -->
+![https://pullpatch.com/products/ladies-mansplaining-is-short-for-man-explaining-removable-patch](img/mansplaining.jpg)<!-- .element align="right" height="35%" width="35%" -->
 
-> If someone perceives my responses as mansplaining, I apologize and encourage them to provide specific feedback on how I can improve and be more respectful in my interactions. (chatGPT)
+"If someone perceives my responses as mansplaining, I apologize and encourage them to provide specific feedback on how I can improve and be more respectful in my interactions." (chatGPT)
 
 
 ### Intermezzo: Back to 1997
 
-![Garry Kasparov against Deep Blue (1997)](img/DeepBlue.jpg)<!-- .element align="right" height="25%" width="25%" -->
+![Garry Kasparov against Deep Blue (1997)](img/DeepBlue.jpg)<!-- .element align="right" height="35%" width="35%" -->
 
 A computer beats a grandmaster at chess. 
 Does that say something about
