@@ -32,6 +32,9 @@ Foster: these systems are designed to make stuff up
 
 ## What ChatGPT is -- and isn't
 
+- chatGPT = large language model + dialogue model
+- different ways to characterise its capabilities
+
 
 ### Not just a large language model
 
@@ -69,7 +72,13 @@ to his interest in getting away with what he says. He does not care whether the 
 "If someone perceives my responses as mansplaining, I apologize and encourage them to provide specific feedback on how I can improve and be more respectful in my interactions." (chatGPT)
 
 
-### Intermezzo: Back to 1997
+### Detour: "computer" chess
+
+![The original Mechanical Turk](img/MechanicalTurk.jpg)<!-- .element align="left" height="30%" width="30%" -->
+![PF & GK](img/kasparov.jpg)<!-- .element align="right" height="50%" width="50%" -->
+
+
+### What does it mean?
 
 ![Garry Kasparov against Deep Blue (1997)](img/DeepBlue.jpg)<!-- .element align="right" height="35%" width="35%" -->
 
@@ -78,12 +87,6 @@ Does that say something about
 - computers? <!-- .element: class="fragment" -->
 - humans? <!-- .element: class="fragment" -->
 - chess? <!-- .element: class="fragment" -->
-
-
-### Real or fake?
-
-![The original Mechanical Turk](img/MechanicalTurk.jpg)<!-- .element align="left" height="30%" width="30%" -->
-![PF & GK](img/kasparov.jpg)<!-- .element align="right" height="50%" width="50%" -->
 
 
 ### Capturing the essence of human language
