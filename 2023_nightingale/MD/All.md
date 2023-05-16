@@ -35,14 +35,14 @@ Foster: these systems are designed to make stuff up
 
 ### Not just a large language model
 
-![chatGPT schematic](img/chatGPT.jpg)<!-- .element align="right" height="90%" width="90%" -->
+![chatGPT schematic](img/chatGPT.jpg)<!-- .element  height="80%" width="80%" -->
 
 [from https://blog.bytebytego.com/p/ep-44-how-does-chatgpt-work](https://blog.bytebytego.com/p/ep-44-how-does-chatgpt-work)
 
 
 ### Training the dialogue model
 
-![chatGPT finetuing](img/finetuning.jpg)<!-- .element align="right" height="90%" width="90%" -->
+![chatGPT finetuing](img/finetuning.jpg)<!-- .element  height="80%" width="80%" -->
 
 [from https://openai.com/blog/chatgpt](https://openai.com/blog/chatgpt)
 
