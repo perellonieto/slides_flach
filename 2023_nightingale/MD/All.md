@@ -82,6 +82,7 @@ Does that say something about
 
 ### Real or fake?
 
+![The original Mechanical Turk](img/MechanicalTurk.jpg)<!-- .element align="left" height="50%" width="50%" -->
 ![PF & GK](img/kasparov.jpg)<!-- .element align="right" height="50%" width="50%" -->
 
 
