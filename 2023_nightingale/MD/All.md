@@ -33,16 +33,16 @@ Foster: these systems are designed to make stuff up
 ## What ChatGPT is -- and isn't
 
 
-### LLM + dialogue model
+### Not just a large language model
 
-![chatGPT schematic](img/chatGPT.jpg)<!-- .element align="right" height="50%" width="50%" -->
+![chatGPT schematic](img/chatGPT.jpg)
 
 [from https://blog.bytebytego.com/p/ep-44-how-does-chatgpt-work](https://blog.bytebytego.com/p/ep-44-how-does-chatgpt-work)
 
 
-### Training the dialogue model with reinforcement learning
+### Training the dialogue model
 
-![chatGPT finetuing](img/finetuning.jpg)<!-- .element align="right" height="50%" width="50%" -->
+![chatGPT finetuing](img/finetuning.jpg)
 
 [from https://openai.com/blog/chatgpt](https://openai.com/blog/chatgpt)
 
