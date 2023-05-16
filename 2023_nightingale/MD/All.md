@@ -35,14 +35,14 @@ Foster: these systems are designed to make stuff up
 
 ### LLM + dialogue model
 
-![chatGPT schematic](img/chatGPT.jpg)<!-- .element align="right" height="35%" width="35%" -->
+![chatGPT schematic](img/chatGPT.jpg)<!-- .element align="right" height="50%" width="50%" -->
 
 [from https://blog.bytebytego.com/p/ep-44-how-does-chatgpt-work](https://blog.bytebytego.com/p/ep-44-how-does-chatgpt-work)
 
 
 ### Training the dialogue model with reinforcement learning
 
-![chatGPT finetuing](img/finetuning.jpg)<!-- .element align="right" height="35%" width="35%" -->
+![chatGPT finetuing](img/finetuning.jpg)<!-- .element align="right" height="50%" width="50%" -->
 
 [from https://openai.com/blog/chatgpt](https://openai.com/blog/chatgpt)
 
