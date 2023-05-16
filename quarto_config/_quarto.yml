@@ -1,0 +1,17 @@
+project:
+  type: website
+  output-dir: _website
+
+website:
+  title: "Peter Flach Slides"
+  navbar:
+    left:
+      - href: index.html
+        text: Home
+      - about.md
+  site-url: ""
+
+format:
+  html:
+    theme: cosmo
+    toc: true
