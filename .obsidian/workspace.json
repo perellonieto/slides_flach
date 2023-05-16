@@ -15,7 +15,7 @@
               "state": {
                 "file": "2023_nightingale/MD/All.md",
                 "mode": "source",
-                "source": false
+                "source": true
               }
             }
           }
@@ -148,8 +148,10 @@
   },
   "active": "a1fc79d5eab9728c",
   "lastOpenFiles": [
-    "2023_nightingale/MD/All 1.md",
+    "2023_nightingale/img/chatGPT.jpg",
     "2023_nightingale/MD/All.md",
+    "2023_nightingale/img/finetuning.jpg",
+    "2023_nightingale/MD/All 1.md",
     "2023-05-16.md",
     "Untitled.canvas"
   ]

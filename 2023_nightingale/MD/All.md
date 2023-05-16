@@ -32,8 +32,19 @@ Foster: these systems are designed to make stuff up
 
 ## What ChatGPT is -- and isn't
 
-- schematic with two levels: LLM + dialogue model
-- development of instructGPT
+
+### LLM + dialogue model
+
+![chatGPT schematic](img/chatGPT.jpg)<!-- .element align="right" height="35%" width="35%" -->
+
+[from https://blog.bytebytego.com/p/ep-44-how-does-chatgpt-work](https://blog.bytebytego.com/p/ep-44-how-does-chatgpt-work)
+
+
+### Training the dialogue model with reinforcement learning
+
+![chatGPT finetuing](img/finetuning.jpg)<!-- .element align="right" height="35%" width="35%" -->
+
+[from https://openai.com/blog/chatgpt](https://openai.com/blog/chatgpt)
 
 
 ### An alien with good English
