@@ -36,7 +36,7 @@ Foster: these systems are designed to make stuff up
 - development of instructGPT
 
 
-### Aliens with good English
+### An alien with good English
 
 > Sometimes I think it's as if aliens had landed and people haven't realized because they speak very good English.
 
@@ -91,6 +91,18 @@ Does that say something about
 ----
 
 ## We need to talk about overconfidence
+
+
+### What is overconfidence? 
+
+
+### Why does it matter? 
+
+
+### What to do about overconfidence
+
+
+### Computer says 'I Don't Know'
 
 ----
 
