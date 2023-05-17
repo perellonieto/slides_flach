@@ -115,8 +115,10 @@ Does that say something about
 ### "Hallucination" and fact-checking
 
 - Putting linguistic elements together in surprising and potentially novel ways is the essence of language, so "hallucination" shouldn't come as a surprise.
-- "Generate something that looks like a URL" and "Generate a meaningful URL that can be found on the web" are two very different things. 
-- - Some forms of fact-checking can be done post-hoc, but others will need to be built into the language model.
+- The following are two very different things: 
+- - "Generate something that looks like a URL" 
+- - "Generate an existing and meaningful URL". 
+- Some forms of fact-checking can be done post-hoc, but others will need to be built into the language model.
 
 
 ### Has AI passed the Turing Test?
@@ -128,13 +130,16 @@ Does that say something about
 
 ### What is overconfidence? 
 
-![Overconfidence](img/overconfidence.jpg) <!-- .element height="50%" width="50%" -->
+![Overconfidence](img/overconfidence.jpg) <!-- .element alignt="right" height="50%" width="50%" -->
+
+An overconfident classifier thinks it’s better at separating classes than it actually is. Hence we need to make predicted probabilities less extreme by pushing them toward the centre.
 
 
 ### Why does it matter? 
 
 Optimal decisions can **only** be made with calibrated probabilities. 
-- E.g., with a poor probability estimator such as naive Bayes it doesn't make sense to apply a fixed decision threshold (such as derived from Bayes' rule).
+- Example: If we trained on balanced classes but want to deploy with 4 times as many positives compared to negatives, we lower the decision threshold to 0.2
+- With a poor probability estimator such as naive Bayes, decision thresholds have to be learned. 
 
 
 ### What to do about overconfidence
