@@ -33,7 +33,7 @@ Foster: these systems are designed to make stuff up
 
 ### Not just a large language model
 
-![ChatGPT schematic](img/ChatGPT.jpg)<!-- .element  height="80%" width="80%" -->
+![ChatGPT schematic](img/chatGPT.jpg)<!-- .element  height="80%" width="80%" -->
 
 [from https://blog.bytebytego.com/p/ep-44-how-does-ChatGPT-work](https://blog.bytebytego.com/p/ep-44-how-does-ChatGPT-work)
 
@@ -78,7 +78,7 @@ Foster: these systems are designed to make stuff up
 
 ...and beats a chess grandmaster. 
 
-Does that say something about
+Does that say something about <!-- .element: class="fragment" -->
 - computers? <!-- .element: class="fragment" -->
 - humans? <!-- .element: class="fragment" -->
 - chess? <!-- .element: class="fragment" -->
