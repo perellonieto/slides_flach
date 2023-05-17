@@ -115,14 +115,22 @@ Does that say something about
 
 ### What is overconfidence? 
 
+![Overconfidence](img/overconfidence.jpg)
+
 
 ### Why does it matter? 
 
 
 ### What to do about overconfidence
 
+![Betacal](img/betacal)
+
 
 ### Computer says 'I Don't Know'
+
+![Little Britain](img/LB.jpg) <!-- .element align="right" -->
+
+[Background Check](https://reframe.github.io/background_check/)
 
 ----
 
