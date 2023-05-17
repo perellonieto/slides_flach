@@ -115,20 +115,23 @@ Does that say something about
 
 ### What is overconfidence? 
 
-![Overconfidence](img/overconfidence.jpg) <!-- .element height="80%" -->
+![Overconfidence](img/overconfidence.jpg) <!-- .element height="50%" -->
 
 
 ### Why does it matter? 
 
+Optimal decisions can **only** be made with calibrated probabilities. 
+- E.g., with a poor probability estimator such as naive Bayes it doesn't make sense to apply a fixed decision threshold (such as derived from Bayes' rule).
+
 
 ### What to do about overconfidence
 
-![Betacal](img/betacal.jpg) <!-- .element height="80%" -->
+![Betacal](img/betacal.jpg) <!-- .element height="50%" -->
 
 
 ### Computer says 'I Don't Know'
 
-![Little Britain](img/LB.jpg) <!-- .element align="right" height="100px" -->
+![Little Britain](img/LB.jpg) <!-- .element align="right" height="200px" -->
 
 [Background Check: A general technique to build more reliable and versatile classifiers (ICDM 2016)](https://reframe.github.io/background_check/)
 
