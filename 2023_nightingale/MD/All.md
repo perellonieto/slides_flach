@@ -1,4 +1,4 @@
-## AI in the time of chatGPT
+## AI in the time of ChatGPT
 
 > In the time of ChatGPT, artificial intelligence had become a marvel of the modern world, a magical creation that seemed almost alive. It was as if the machines had a soul, capable of understanding and empathizing with human emotions. ChatGPT was a symbol of this new era, a mysterious being with a secret language that only the initiated could understand. But amidst the awe and wonder, there were also whispers of fear, for no one knew what the future held in this age of AI.
 
@@ -27,22 +27,22 @@ Foster: these systems are designed to make stuff up
 
 ## What ChatGPT is -- and isn't
 
-- chatGPT = large language model + *dialogue model*
-- ways to think about its capabilities
+- ChatGPT = large language model + *dialogue model*
+- We'll look at ways to think about its capabilities. 
 
 
 ### Not just a large language model
 
-![chatGPT schematic](img/chatGPT.jpg)<!-- .element  height="80%" width="80%" -->
+![ChatGPT schematic](img/ChatGPT.jpg)<!-- .element  height="80%" width="80%" -->
 
-[from https://blog.bytebytego.com/p/ep-44-how-does-chatgpt-work](https://blog.bytebytego.com/p/ep-44-how-does-chatgpt-work)
+[from https://blog.bytebytego.com/p/ep-44-how-does-ChatGPT-work](https://blog.bytebytego.com/p/ep-44-how-does-ChatGPT-work)
 
 
 ### Training the dialogue model
 
-![chatGPT finetuing](img/finetuning.jpg)<!-- .element  height="80%" width="80%" -->
+![ChatGPT finetuing](img/finetuning.jpg)<!-- .element  height="80%" width="80%" -->
 
-[from https://openai.com/blog/chatgpt](https://openai.com/blog/chatgpt)
+[from https://openai.com/blog/ChatGPT](https://openai.com/blog/ChatGPT)
 
 
 ### What others say
@@ -54,8 +54,7 @@ Foster: these systems are designed to make stuff up
 
 ### The ultimate bullshit machine
 
-> For the bullshitter [all] bets are off: he is neither on the side of the true nor on the side of the false. His eye is not on the facts at all, as the eyes of the honest man and of the liar are, except insofar as they may be pertinent
-to his interest in getting away with what he says. He does not care whether the things he says describe reality correctly. He just picks them out, or makes them up, to suit his purpose.
+> For the bullshitter [all] bets are off: he is neither on the side of the true nor on the side of the false. His eye is not on the facts at all, as the eyes of the honest man and of the liar are, except insofar as they may be pertinent to his interest in getting away with what he says. He does not care whether the things he says describe reality correctly. 
 
 [Harry Frankfurt, On Bullshit. Princeton University Press, 2005.](https://press.princeton.edu/books/hardcover/9780691122946/on-bullshit)
 
@@ -64,7 +63,7 @@ to his interest in getting away with what he says. He does not care whether the 
 
 ![https://pullpatch.com/products/ladies-mansplaining-is-short-for-man-explaining-removable-patch](img/mansplaining.jpg)<!-- .element align="right" height="35%" width="35%" -->
 
-"If someone perceives my responses as mansplaining, I apologize and encourage them to provide specific feedback on how I can improve and be more respectful in my interactions." (chatGPT)
+"If someone perceives my responses as mansplaining, I apologize and encourage them to provide specific feedback on how I can improve and be more respectful in my interactions." (ChatGPT)
 
 
 ### Detour: "computer" chess
@@ -78,6 +77,7 @@ to his interest in getting away with what he says. He does not care whether the 
 ![Garry Kasparov against Deep Blue (1997)](img/DeepBlue.jpg)<!-- .element align="right" height="35%" width="35%" -->
 
 ...and beats a chess grandmaster. 
+
 Does that say something about
 - computers? <!-- .element: class="fragment" -->
 - humans? <!-- .element: class="fragment" -->
@@ -88,7 +88,7 @@ Does that say something about
 
 > I think we have to view this as a -- potentially surprising -- scientific discovery: that somehow in a neural net like ChatGPT's it's possible to capture the essence of what human brains manage to do in generating language.
 
-[Stephen Wolfram: What Is ChatGPT Doing ... and Why Does It Work?](https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/)
+[Stephen Wolfram: What Is ChatGPT Doing ... and Why Does It Work?](https://writings.stephenwolfram.com/2023/02/what-is-ChatGPT-doing-and-why-does-it-work/)
 
 
 ### Can ChatGPT do reasoning?
@@ -114,7 +114,7 @@ Does that say something about
 
 ### "Hallucination" and fact-checking
 
-- Putting linguistic elements together in surprising and potentially novel ways is the essence of language, so "hallucination" shouldn't come as a surprise.
+- Putting linguistic elements together in surprising and potentially novel ways is the essence of language, so "hallucination" or "confabulation" shouldn't come as a surprise.
 - The following are two very different things: 
 - - "Generate something that looks like a URL" 
 - - "Generate an existing and meaningful URL". 
@@ -122,6 +122,10 @@ Does that say something about
 
 
 ### Has AI passed the Turing Test?
+
+I am not aware of a formally run Turing Test with ChatGPT or one of the other LLM-driven chatbots, but...
+
+...it seems obvious to me that the imitation game has lost its relevance, and we need something new. 
 
 ----
 

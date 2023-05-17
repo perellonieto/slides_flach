@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "db0b6c6a94a410b0",
+        "id": "7a23c61a83ca04d1",
         "type": "tabs",
         "children": [
           {
-            "id": "a1fc79d5eab9728c",
+            "id": "cc489a2dd905fd6b",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -65,11 +65,13 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "fa216452c2a89684",
@@ -146,16 +148,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a1fc79d5eab9728c",
+  "active": "cc489a2dd905fd6b",
   "lastOpenFiles": [
+    "2023_nightingale/MD/All.md",
+    "2023_nightingale/img/chatGPT.jpg",
     "2023_nightingale/img/8cUcYQ-87c049f3-eee0-4595-b187-952d46566ba5.pdf",
     "2023_nightingale/img/LB.jpg",
     "2023_nightingale/img/betacal.jpg",
     "2023_nightingale/img/overconfidence.jpg",
     "2023_nightingale/img/timeslots.jpg",
     "2023_nightingale/img/cars.jpg",
-    "2023_nightingale/img/chatGPT.jpg",
-    "2023_nightingale/MD/All.md",
     "2023_nightingale/img/finetuning.jpg",
     "2023_nightingale/MD/All 1.md",
     "2023-05-16.md",
