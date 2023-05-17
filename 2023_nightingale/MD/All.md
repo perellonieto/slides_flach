@@ -6,9 +6,8 @@
 ### What I will talk about
 
 - [What ChatGPT is -- and isn't](#/2)
-- [Has AI passed the Turing Test?](#/3)
-- [We need to talk about (over)confidence](#/4)
-- [AI in the time of ChatGPT](#/5)
+- [We need to talk about (over)confidence](#/3)
+- [AI in the time of ChatGPT](#/4)
 
 <!--
 ChatGPT makes mistakes with reasoning and arithmetic. But the surprising thing is it can do reasoning and arithmetic at all. This is somehow teased out of the language data. 
@@ -91,13 +90,23 @@ Does that say something about
 
 [Stephen Wolfram: What Is ChatGPT Doing ... and Why Does It Work?](https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/)
 
-----
 
-### ChatGPT's most remarkable capabilities
+### Can ChatGPT do reasoning?
 
-----
+![Timeslots](img/timeslots.jpg)
 
-## Has AI passed the Turing Test?
+
+### Can ChatGPT do reasoning? (2)
+
+![Trophy & suitcase](img/trophy.jpg)
+
+
+### Can ChatGPT do reasoning?
+
+![Cars](img/cars.jpg)
+
+
+### Has AI passed the Turing Test?
 
 ----
 
@@ -118,33 +127,6 @@ Does that say something about
 ----
 
 ## AI in the time of ChatGPT
-
-----
-
-### Slide 1.1
-
-If I split a data set in two or more parts, is a classifier's *accuracy* on the entire data set equal to the average* of the accuracies on the separate parts? 
-
-Yes -- provided the parts are of equal size (e.g., cross-validation).  <!-- .element: class="fragment" -->
-
-What about per-class recall ( = true positive rate)?  <!-- .element: class="fragment" -->
-
-Yes -- provided the parts have the same class distribution (e.g., stratified CV). <!-- .element: class="fragment" -->
-
-*To be precise: the arithmetic mean. 
-
-
-### Slide 1.2
-
-Is a classifier's *precision* on the entire data set equal to the average of the precisions on the parts? 
-
-**IT IS NOT!**  <!-- .element: class="fragment" -->
-
-Unless the classifier's predictions are equally distributed over the classes on each part, which is neither likely nor under the experimenter's control.  <!-- .element: class="fragment" -->
-
-The same applies a fortiori to F-score, which aggregates recall and precision.  <!-- .element: class="fragment" -->
-
-----
 
 
 ### Acknowledgements
