@@ -11,7 +11,7 @@
 
 <!--
 ChatGPT makes mistakes with reasoning and arithmetic. But the surprising thing is it can do reasoning and arithmetic at all. This is somehow teased out of the language data. 
-While reasoning, arithmetic and many other are emergent capabilities, this doesn't mean that they can be achieved perfectly by every larger LMs. 
+While reasoning, arithmetic and many other are emergent capabilities, this doesn't mean that they can be achieved perfectly by ever larger LMs. 
 Putting linguistic elements together in surprising and potentially novel ways is the essence of language, so "hallucination" shouldn't come as a surprise. "Generate something that looks like a URL/literature reference etc." This exemplifies the need for fact-checking (easy in the case of URLs). 
 Achievements on "human" tasks have three ingredients: machine, human, task. E.g. Deep Blue, Kasparov, chess; AlphaGo, Lee Se Dong, Go. Conclusions should involve the triple: e.g., chess is more suited to algorithmic treatment than we thought. 
 Games like chess and Go have emerged at a sweet spot: it can be played by children, but only few can play it really well. 
@@ -73,11 +73,11 @@ to his interest in getting away with what he says. He does not care whether the 
 ![PF & GK](img/kasparov.jpg)<!-- .element align="right" height="50%" width="50%" -->
 
 
-### What does it mean?
+### A computer walks into a chess tournament...
 
 ![Garry Kasparov against Deep Blue (1997)](img/DeepBlue.jpg)<!-- .element align="right" height="35%" width="35%" -->
 
-A computer beats a grandmaster at chess. 
+...and beats a chess grandmaster. 
 Does that say something about
 - computers? <!-- .element: class="fragment" -->
 - humans? <!-- .element: class="fragment" -->
@@ -101,9 +101,22 @@ Does that say something about
 ![Trophy & suitcase](img/trophy.jpg)
 
 
-### Can ChatGPT do reasoning?
+### Can ChatGPT do reasoning? (3)
 
 ![Cars](img/cars.jpg)
+
+
+### Can ChatGPT do reasoning? (4)
+
+- Amusing mistakes like these aside, it is rather remarkable that (limited) reasoning capabilities have arisen without having been explicitly trained on such tasks. 
+- This demonstrates the surprising power of large language data. 
+
+
+### "Hallucination" and fact-checking
+
+- Putting linguistic elements together in surprising and potentially novel ways is the essence of language, so "hallucination" shouldn't come as a surprise.
+- "Generate something that looks like a URL" and "Generate a meaningful URL that can be found on the web" are two very different things. 
+- - Some forms of fact-checking can be done post-hoc, but others will need to be built into the language model.
 
 
 ### Has AI passed the Turing Test?
@@ -140,6 +153,12 @@ Optimal decisions can **only** be made with calibrated probabilities.
 ----
 
 ## AI in the time of ChatGPT
+
+So what can we conclude from all this? 
+- The distinction between learning and reasoning is much less clearcut once you train on language data. 
+- It is to be expected that other task layers on top of LLMs will give rise to many other capabilities. 
+- How such capabilities can be assessed and measured is a wide-open question, see e.g. [# Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models](https://arxiv.org/abs/2206.04615). 
+- Properly quantifying confidence and imbuing AI with the capability to say 'I don't know' is key for trustworthiness. 
 
 
 ### Acknowledgements
