@@ -134,7 +134,7 @@ I am not aware of a formally run Turing Test with ChatGPT or one of the other LL
 
 ### What is overconfidence? 
 
-![Overconfidence](img/overconfidence.jpg) <!-- .element alignt="right" height="30%" width="30%" -->
+![Overconfidence](img/overconfidence.jpg) <!-- .element align="right" height="35%" width="35%" -->
 
 An overconfident classifier thinks it's better at separating classes than it actually is. Hence we need to make predicted probabilities less extreme by pushing them toward the centre.
 
