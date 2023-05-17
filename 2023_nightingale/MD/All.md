@@ -6,13 +6,9 @@
 ### What I will talk about
 
 - [What ChatGPT is -- and isn't](#/2)
-- [ChatGPT's most remarkable capabilities](#/3)
-- [Has AI passed the Turing Test?](#/4)
-- [We need to talk about overconfidence](#/5)
-- [AI in the time of ChatGPT](#/6)
-
-
-### Notes
+- [Has AI passed the Turing Test?](#/3)
+- [We need to talk about (over)confidence](#/4)
+- [AI in the time of ChatGPT](#/5)
 
 <!--
 ChatGPT makes mistakes with reasoning and arithmetic. But the surprising thing is it can do reasoning and arithmetic at all. This is somehow teased out of the language data. 
@@ -32,8 +28,8 @@ Foster: these systems are designed to make stuff up
 
 ## What ChatGPT is -- and isn't
 
-- chatGPT = large language model + dialogue model
-- different ways to characterise its capabilities
+- chatGPT = large language model + *dialogue model*
+- ways to think about its capabilities
 
 
 ### Not just a large language model
@@ -50,7 +46,7 @@ Foster: these systems are designed to make stuff up
 [from https://openai.com/blog/chatgpt](https://openai.com/blog/chatgpt)
 
 
-### An alien with good English
+### What others say
 
 > Sometimes I think it's as if aliens had landed and people haven't realized because they speak very good English.
 
@@ -97,7 +93,7 @@ Does that say something about
 
 ----
 
-## ChatGPT's most remarkable capabilities
+### ChatGPT's most remarkable capabilities
 
 ----
 
@@ -105,7 +101,7 @@ Does that say something about
 
 ----
 
-## We need to talk about overconfidence
+## We need to talk about (over)confidence
 
 
 ### What is overconfidence? 
@@ -150,6 +146,12 @@ The same applies a fortiori to F-score, which aggregates recall and precision.  
 
 ----
 
+
+### Acknowledgements
+
+Many thanks to collaborators Yu Chen, Tom Diethe, Jose Hernandez-Orallo, Meelis Kull, Miquel Perello-Nieto, Ricardo Prudencio, Raul Santos-Rodriguez, Telmo Silva Filho, Kacper Sokol, Hao Song, and many others. 
+
+<!--
 ## Section 2
 
 Perhaps surprisingly, there doesn't seem to be a definitive framework to link all these concepts together.
@@ -173,10 +175,4 @@ Proper treatment of performance evaluation in data science and AI requires a sop
 - *Coherent types and meta-data* for the observable performance indicators;
 - *Latent-variable models* for the unobservable performance indicators of interest;
 - *Causal models* to allow for counterfactual reasoning.
-
-
-### Acknowledgements
-
-Part of this work was funded through a project with the Alan Turing Institute; papers, code and videos can be accessed [here](https://www.turing.ac.uk/research/research-projects/measurement-theory-data-science-and-ai#recent-updates).
-
-Many thanks to Hao Song, the Research Associate on the project; and collaborators Jose Hernandez-Orallo, Kacper Sokol, Meelis Kull, Tom Diethe, Yu Chen, Ricardo Prudencio, Telmo Filho, Miquel Perello-Nieto, Raul Santos-Rodriguez and many others.  <!-- .element: class="fragment" -->
+-->
