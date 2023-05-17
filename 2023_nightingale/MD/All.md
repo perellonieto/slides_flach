@@ -130,15 +130,15 @@ Does that say something about
 
 ### What is overconfidence? 
 
-![Overconfidence](img/overconfidence.jpg) <!-- .element alignt="right" height="50%" width="50%" -->
+![Overconfidence](img/overconfidence.jpg) <!-- .element alignt="right" height="40%" width="40%" -->
 
-An overconfident classifier thinks it’s better at separating classes than it actually is. Hence we need to make predicted probabilities less extreme by pushing them toward the centre.
+An overconfident classifier thinks it's better at separating classes than it actually is. Hence we need to make predicted probabilities less extreme by pushing them toward the centre.
 
 
 ### Why does it matter? 
 
 Optimal decisions can **only** be made with calibrated probabilities. 
-- Example: If we trained on balanced classes but want to deploy with 4 times as many positives compared to negatives, we lower the decision threshold to 0.2
+- Example: If we trained on balanced classes but want to deploy with 4 times as many positives compared to negatives, we lower the decision threshold to 0.2.
 - With a poor probability estimator such as naive Bayes, decision thresholds have to be learned. 
 
 
