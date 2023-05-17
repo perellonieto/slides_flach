@@ -116,8 +116,8 @@ Does that say something about
 
 - Putting linguistic elements together in surprising and potentially novel ways is the essence of language, so "hallucination" or "confabulation" shouldn't come as a surprise.
 - The following are two very different things: 
-- - "Generate something that looks like a URL" 
-- - "Generate an existing and meaningful URL". 
+   - "Generate something that looks like a URL"; 
+   - "Generate an existing and meaningful URL". 
 - Some forms of fact-checking can be done post-hoc, but others will need to be built into the language model.
 
 
@@ -125,7 +125,7 @@ Does that say something about
 
 I am not aware of a formally run Turing Test with ChatGPT or one of the other LLM-driven chatbots, but...
 
-...it seems obvious to me that the imitation game has lost its relevance, and we need something new. 
+...it seems obvious to me that the imitation game has lost its relevance, and we need something new. <!-- .element: class="fragment" -->
 
 ----
 
@@ -142,15 +142,15 @@ An overconfident classifier thinks it's better at separating classes than it act
 ### Why does it matter? 
 
 Optimal decisions can **only** be made with calibrated probabilities. 
-- Example: If we trained on balanced classes but want to deploy with 4 times as many positives compared to negatives, we lower the decision threshold to 0.2.
-- With a poor probability estimator such as naive Bayes, decision thresholds have to be learned. 
+- Example: If we trained on balanced classes but want to deploy with 4 times as many positives compared to negatives, we lower the decision threshold to 0.2. <!-- .element: class="fragment" -->
+- With a poor probability estimator such as naive Bayes, decision thresholds have to be learned. <!-- .element: class="fragment" -->
 
 
 ### What to do about overconfidence
 
 ![Betacal](img/betacal.jpg) <!-- .element height="50%" width="50%" -->
 
-[Shameless plug](https://link.springer.com/article/10.1007/s10994-023-06336-7)
+[Shameless plug](https://link.springer.com/article/10.1007/s10994-023-06336-7) <!-- .element: class="fragment" -->
 
 
 ### Computer says 'I Don't Know'
@@ -163,10 +163,10 @@ Optimal decisions can **only** be made with calibrated probabilities.
 
 ## AI in the time of ChatGPT
 
-- The distinction between learning and reasoning is much less clearcut once you train on language data. 
-- It is to be expected that other task layers on top of LLMs will give rise to many other capabilities. 
-- How such capabilities can be assessed and measured is a wide-open question, see e.g. [Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models](https://arxiv.org/abs/2206.04615). 
-- Properly quantifying confidence and imbuing AI with the capability to say 'I don't know' is key for trustworthiness. 
+- The distinction between learning and reasoning is much less clearcut once you train on language data. <!-- .element: class="fragment" -->
+- It is to be expected that other task layers on top of LLMs will give rise to many other capabilities. <!-- .element: class="fragment" -->
+- How such capabilities can be assessed and measured is a wide-open question, see e.g. [Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models](https://arxiv.org/abs/2206.04615). <!-- .element: class="fragment" -->
+- Properly quantifying confidence and imbuing AI with the capability to say 'I don't know' is key for trustworthiness. <!-- .element: class="fragment" -->
 
 
 ### Acknowledgements
