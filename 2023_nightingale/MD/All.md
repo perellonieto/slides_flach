@@ -159,10 +159,9 @@ Optimal decisions can **only** be made with calibrated probabilities.
 
 ## AI in the time of ChatGPT
 
-So what can we conclude from all this? 
 - The distinction between learning and reasoning is much less clearcut once you train on language data. 
 - It is to be expected that other task layers on top of LLMs will give rise to many other capabilities. 
-- How such capabilities can be assessed and measured is a wide-open question, see e.g. [# Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models](https://arxiv.org/abs/2206.04615). 
+- How such capabilities can be assessed and measured is a wide-open question, see e.g. [Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models](https://arxiv.org/abs/2206.04615). 
 - Properly quantifying confidence and imbuing AI with the capability to say 'I don't know' is key for trustworthiness. 
 
 
