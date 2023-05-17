@@ -115,7 +115,7 @@ Does that say something about
 
 ### What is overconfidence? 
 
-![Overconfidence](img/overconfidence.jpg) <!-- .element height="50%" -->
+![Overconfidence](img/overconfidence.jpg) <!-- .element height="50%" width="50%" -->
 
 
 ### Why does it matter? 
@@ -126,7 +126,7 @@ Optimal decisions can **only** be made with calibrated probabilities.
 
 ### What to do about overconfidence
 
-![Betacal](img/betacal.jpg) <!-- .element height="50%" -->
+![Betacal](img/betacal.jpg) <!-- .element height="50%" width="50%" -->
 
 
 ### Computer says 'I Don't Know'
