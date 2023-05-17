@@ -128,6 +128,8 @@ Optimal decisions can **only** be made with calibrated probabilities.
 
 ![Betacal](img/betacal.jpg) <!-- .element height="50%" width="50%" -->
 
+[Shameless plug](https://link.springer.com/article/10.1007/s10994-023-06336-7)
+
 
 ### Computer says 'I Don't Know'
 
