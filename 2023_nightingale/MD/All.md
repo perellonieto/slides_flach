@@ -115,7 +115,7 @@ Does that say something about
 
 ### What is overconfidence? 
 
-![Overconfidence](img/overconfidence.jpg)
+![Overconfidence](img/overconfidence.jpg) <!-- .element height="80%" -->
 
 
 ### Why does it matter? 
@@ -123,14 +123,14 @@ Does that say something about
 
 ### What to do about overconfidence
 
-![Betacal](img/betacal)
+![Betacal](img/betacal.jpg) <!-- .element height="80%" -->
 
 
 ### Computer says 'I Don't Know'
 
-![Little Britain](img/LB.jpg) <!-- .element align="right" -->
+![Little Britain](img/LB.jpg) <!-- .element align="right" height="100px" -->
 
-[Background Check](https://reframe.github.io/background_check/)
+[Background Check: A general technique to build more reliable and versatile classifiers (ICDM 2016)](https://reframe.github.io/background_check/)
 
 ----
 
@@ -140,29 +140,3 @@ Does that say something about
 ### Acknowledgements
 
 Many thanks to collaborators Yu Chen, Tom Diethe, Jose Hernandez-Orallo, Meelis Kull, Miquel Perello-Nieto, Ricardo Prudencio, Raul Santos-Rodriguez, Telmo Silva Filho, Kacper Sokol, Hao Song, and many others. 
-
-<!--
-## Section 2
-
-Perhaps surprisingly, there doesn't seem to be a definitive framework to link all these concepts together.
-
-We'll look at it from a few perspectives:
-
-- [Levels of measurement](#/2/1)
-- [The physics perspective](#/2/6)
-- [The computer science perspective](#/2/9)
-
-
-## Slide 2.1
-
-asdfasdf
-
-----
-
-## Concluding remarks
-
-Proper treatment of performance evaluation in data science and AI requires a sophisticated **measurement framework** with the following components:
-- *Coherent types and meta-data* for the observable performance indicators;
-- *Latent-variable models* for the unobservable performance indicators of interest;
-- *Causal models* to allow for counterfactual reasoning.
--->
