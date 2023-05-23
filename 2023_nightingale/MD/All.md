@@ -1,4 +1,4 @@
-## AI in the time of chatGPT
+## AI in the time of ChatGPT
 
 > In the time of ChatGPT, artificial intelligence had become a marvel of the modern world, a magical creation that seemed almost alive. It was as if the machines had a soul, capable of understanding and empathizing with human emotions. ChatGPT was a symbol of this new era, a mysterious being with a secret language that only the initiated could understand. But amidst the awe and wonder, there were also whispers of fear, for no one knew what the future held in this age of AI.
 
@@ -6,17 +6,12 @@
 ### What I will talk about
 
 - [What ChatGPT is -- and isn't](#/2)
-- [ChatGPT's most remarkable capabilities](#/3)
-- [Has AI passed the Turing Test?](#/4)
-- [We need to talk about overconfidence](#/5)
-- [AI in the time of ChatGPT](#/6)
-
-
-### Notes
+- [We need to talk about (over)confidence](#/3)
+- [AI in the time of ChatGPT](#/4)
 
 <!--
 ChatGPT makes mistakes with reasoning and arithmetic. But the surprising thing is it can do reasoning and arithmetic at all. This is somehow teased out of the language data. 
-While reasoning, arithmetic and many other are emergent capabilities, this doesn't mean that they can be achieved perfectly by every larger LMs. 
+While reasoning, arithmetic and many other are emergent capabilities, this doesn't mean that they can be achieved perfectly by ever larger LMs. 
 Putting linguistic elements together in surprising and potentially novel ways is the essence of language, so "hallucination" shouldn't come as a surprise. "Generate something that looks like a URL/literature reference etc." This exemplifies the need for fact-checking (easy in the case of URLs). 
 Achievements on "human" tasks have three ingredients: machine, human, task. E.g. Deep Blue, Kasparov, chess; AlphaGo, Lee Se Dong, Go. Conclusions should involve the triple: e.g., chess is more suited to algorithmic treatment than we thought. 
 Games like chess and Go have emerged at a sweet spot: it can be played by children, but only few can play it really well. 
@@ -32,22 +27,25 @@ Foster: these systems are designed to make stuff up
 
 ## What ChatGPT is -- and isn't
 
+- ChatGPT = large language model + *dialogue model*
+- We'll look at ways to think about its capabilities. 
+
 
 ### Not just a large language model
 
-![chatGPT schematic](img/chatGPT.jpg)<!-- .element  height="80%" width="80%" -->
+![ChatGPT schematic](img/chatGPT.jpg)<!-- .element  height="80%" width="80%" -->
 
-[from https://blog.bytebytego.com/p/ep-44-how-does-chatgpt-work](https://blog.bytebytego.com/p/ep-44-how-does-chatgpt-work)
+[from https://blog.bytebytego.com/p/ep-44-how-does-ChatGPT-work](https://blog.bytebytego.com/p/ep-44-how-does-ChatGPT-work)
 
 
 ### Training the dialogue model
 
-![chatGPT finetuing](img/finetuning.jpg)<!-- .element  height="80%" width="80%" -->
+![ChatGPT finetuing](img/finetuning.jpg)<!-- .element  height="80%" width="80%" -->
 
-[from https://openai.com/blog/chatgpt](https://openai.com/blog/chatgpt)
+[from https://openai.com/blog/ChatGPT](https://openai.com/blog/ChatGPT)
 
 
-### An alien with good English
+### What others say
 
 > Sometimes I think it's as if aliens had landed and people haven't realized because they speak very good English.
 
@@ -56,8 +54,7 @@ Foster: these systems are designed to make stuff up
 
 ### The ultimate bullshit machine
 
-> For the bullshitter [all] bets are off: he is neither on the side of the true nor on the side of the false. His eye is not on the facts at all, as the eyes of the honest man and of the liar are, except insofar as they may be pertinent
-to his interest in getting away with what he says. He does not care whether the things he says describe reality correctly. He just picks them out, or makes them up, to suit his purpose.
+> For the bullshitter [all] bets are off: he is neither on the side of the true nor on the side of the false. His eye is not on the facts at all, as the eyes of the honest man and of the liar are, except insofar as they may be pertinent to his interest in getting away with what he says. He does not care whether the things he says describe reality correctly. 
 
 [Harry Frankfurt, On Bullshit. Princeton University Press, 2005.](https://press.princeton.edu/books/hardcover/9780691122946/on-bullshit)
 
@@ -66,114 +63,114 @@ to his interest in getting away with what he says. He does not care whether the 
 
 ![https://pullpatch.com/products/ladies-mansplaining-is-short-for-man-explaining-removable-patch](img/mansplaining.jpg)<!-- .element align="right" height="35%" width="35%" -->
 
-"If someone perceives my responses as mansplaining, I apologize and encourage them to provide specific feedback on how I can improve and be more respectful in my interactions." (chatGPT)
+"If someone perceives my responses as mansplaining, I apologize and encourage them to provide specific feedback on how I can improve and be more respectful in my interactions." (ChatGPT)
 
 
-### Intermezzo: Back to 1997
-
-![Garry Kasparov against Deep Blue (1997)](img/DeepBlue.jpg)<!-- .element align="right" height="35%" width="35%" -->
-
-A computer beats a grandmaster at chess. 
-Does that say something about
-- computers? <!-- .element: class="fragment" -->
-- humans? <!-- .element: class="fragment" -->
-- chess? <!-- .element: class="fragment" -->
-
-
-### Real or fake?
+### Detour: "computer" chess
 
 ![The original Mechanical Turk](img/MechanicalTurk.jpg)<!-- .element align="left" height="30%" width="30%" -->
 ![PF & GK](img/kasparov.jpg)<!-- .element align="right" height="50%" width="50%" -->
+
+
+### A computer walks into a chess tournament...
+
+![Garry Kasparov against Deep Blue (1997)](img/DeepBlue.jpg)<!-- .element align="right" height="35%" width="35%" -->
+
+...and beats a chess grandmaster. 
+
+Does that say something about <!-- .element: class="fragment" -->
+- computers? <!-- .element: class="fragment" -->
+- humans? <!-- .element: class="fragment" -->
+- chess? <!-- .element: class="fragment" -->
 
 
 ### Capturing the essence of human language
 
 > I think we have to view this as a -- potentially surprising -- scientific discovery: that somehow in a neural net like ChatGPT's it's possible to capture the essence of what human brains manage to do in generating language.
 
-[Stephen Wolfram: What Is ChatGPT Doing ... and Why Does It Work?](https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/)
+[Stephen Wolfram: What Is ChatGPT Doing ... and Why Does It Work?](https://writings.stephenwolfram.com/2023/02/what-is-ChatGPT-doing-and-why-does-it-work/)
+
+
+### Can ChatGPT do reasoning?
+
+![Timeslots](img/timeslots.jpg)
+
+
+### Can ChatGPT do reasoning? (2)
+
+![Trophy & suitcase](img/trophy.jpg)
+
+
+### Can ChatGPT do reasoning? (3)
+
+![Cars](img/cars.jpg)
+
+
+### Can ChatGPT do reasoning? (4)
+
+- Amusing mistakes like these aside, it is rather remarkable that (limited) reasoning capabilities have arisen without having been explicitly trained on such tasks. 
+- This demonstrates the surprising power of large language data. 
+
+
+### "Hallucination" and fact-checking
+
+- Putting linguistic elements together in surprising and potentially novel ways is the essence of language, so "hallucination" or "confabulation" shouldn't come as a surprise.
+- The following are two very different things: 
+   - "Generate something that looks like a URL"; 
+   - "Generate an existing and meaningful URL". 
+- Some forms of fact-checking can be done post-hoc, but others will need to be built into the language model.
+
+
+### Has AI passed the Turing Test?
+
+I am not aware of a formally run Turing Test with ChatGPT or one of the other LLM-driven chatbots, but...
+
+...it seems obvious to me that the imitation game has lost its relevance, and we need something new. <!-- .element: class="fragment" -->
 
 ----
 
-## ChatGPT's most remarkable capabilities
-
-----
-
-## Has AI passed the Turing Test?
-
-----
-
-## We need to talk about overconfidence
+## We need to talk about (over)confidence
 
 
 ### What is overconfidence? 
 
+![Overconfidence](img/overconfidence.jpg) <!-- .element align="right" height="40%" width="40%" -->
+
+An overconfident classifier thinks it's better at separating classes than it actually is. 
+
+Hence we need to make predicted probabilities less extreme by pushing them toward the centre. <!-- .element: class="fragment" -->
+
 
 ### Why does it matter? 
+
+Optimal decisions can **only** be made with calibrated probabilities. 
+- Example: If we trained on balanced classes but want to deploy with 4 times as many positives compared to negatives, we lower the decision threshold to 0.2. <!-- .element: class="fragment" -->
+- With a poor probability estimator such as naive Bayes, decision thresholds have to be learned. <!-- .element: class="fragment" -->
 
 
 ### What to do about overconfidence
 
+![Betacal](img/betacal.jpg) <!-- .element height="50%" width="50%" -->
+
+[Shameless plug](https://link.springer.com/article/10.1007/s10994-023-06336-7) <!-- .element: class="fragment" -->
+
 
 ### Computer says 'I Don't Know'
+
+![Little Britain](img/LB.jpg) <!-- .element align="right" height="200px" -->
+
+[Background Check: A general technique to build more reliable and versatile classifiers (ICDM 2016)](https://reframe.github.io/background_check/)
 
 ----
 
 ## AI in the time of ChatGPT
 
-----
-
-### Slide 1.1
-
-If I split a data set in two or more parts, is a classifier's *accuracy* on the entire data set equal to the average* of the accuracies on the separate parts? 
-
-Yes -- provided the parts are of equal size (e.g., cross-validation).  <!-- .element: class="fragment" -->
-
-What about per-class recall ( = true positive rate)?  <!-- .element: class="fragment" -->
-
-Yes -- provided the parts have the same class distribution (e.g., stratified CV). <!-- .element: class="fragment" -->
-
-*To be precise: the arithmetic mean. 
-
-
-### Slide 1.2
-
-Is a classifier's *precision* on the entire data set equal to the average of the precisions on the parts? 
-
-**IT IS NOT!**  <!-- .element: class="fragment" -->
-
-Unless the classifier's predictions are equally distributed over the classes on each part, which is neither likely nor under the experimenter's control.  <!-- .element: class="fragment" -->
-
-The same applies a fortiori to F-score, which aggregates recall and precision.  <!-- .element: class="fragment" -->
-
-----
-
-## Section 2
-
-Perhaps surprisingly, there doesn't seem to be a definitive framework to link all these concepts together.
-
-We'll look at it from a few perspectives:
-
-- [Levels of measurement](#/2/1)
-- [The physics perspective](#/2/6)
-- [The computer science perspective](#/2/9)
-
-
-## Slide 2.1
-
-asdfasdf
-
-----
-
-## Concluding remarks
-
-Proper treatment of performance evaluation in data science and AI requires a sophisticated **measurement framework** with the following components:
-- *Coherent types and meta-data* for the observable performance indicators;
-- *Latent-variable models* for the unobservable performance indicators of interest;
-- *Causal models* to allow for counterfactual reasoning.
+- The distinction between learning and reasoning is much less clearcut once you train on language data. 
+- It is to be expected that other task layers on top of LLMs will give rise to many other capabilities. 
+- How such capabilities can be assessed and measured is a wide-open question, see e.g. [Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models](https://arxiv.org/abs/2206.04615). 
+- Properly quantifying confidence and imbuing AI with the capability to say 'I don't know' is key for trustworthiness. 
 
 
 ### Acknowledgements
 
-Part of this work was funded through a project with the Alan Turing Institute; papers, code and videos can be accessed [here](https://www.turing.ac.uk/research/research-projects/measurement-theory-data-science-and-ai#recent-updates).
-
-Many thanks to Hao Song, the Research Associate on the project; and collaborators Jose Hernandez-Orallo, Kacper Sokol, Meelis Kull, Tom Diethe, Yu Chen, Ricardo Prudencio, Telmo Filho, Miquel Perello-Nieto, Raul Santos-Rodriguez and many others.  <!-- .element: class="fragment" -->
+Many thanks to collaborators Yu Chen, Tom Diethe, Jose Hernandez-Orallo, Meelis Kull, Miquel Perello-Nieto, Ricardo Prudencio, Raul Santos-Rodriguez, Telmo Silva Filho, Kacper Sokol, Hao Song, and many others. 
