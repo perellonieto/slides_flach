@@ -1,3 +1,9 @@
+---
+layout: slides
+title: The highs and lows of performance evaluation
+subtitle: Towards a measurement theory for machine learning
+---
+
 ## Why care about measurement?
 
 Measurements are relevant in data science and AI for at least two reasons:

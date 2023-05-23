@@ -1,6 +1,15 @@
-## Why care about measurement?
+---
+title: The highs and lows of performance evaluation
+subtitle: Towards a measurement theory for machine learning
+format:
+  revealjs:
+    css: css/reveal.css
+---
+
+# Why care about measurement?
 
 Measurements are relevant in data science and AI for at least two reasons:
+
 - *Features* often are measurements on some scale, which dictates admissible statistics and operations.
   - E.g., taking the expectation assumes a linear scale.
 - *Performance metrics* are also measurements, and hence the same applies. 
@@ -8,38 +17,38 @@ Measurements are relevant in data science and AI for at least two reasons:
 [This project](https://www.turing.ac.uk/research/research-projects/measurement-theory-data-science-and-ai) looked at foundational issues, of which there are many! 
 
 
-### Performance measurement is easy...
+## Performance measurement is easy...
 
 If I split a data set in two or more parts, is a classifier's *accuracy* on the entire data set equal to the average* of the accuracies on the separate parts? 
 
 Yes -- provided the parts are of equal size (e.g., cross-validation).  <!-- .element: class="fragment" -->
 
-What about per-class recall?  <!-- .element: class="fragment" -->
+What about per-class recall ( = true positive rate)?  <!-- .element: class="fragment" -->
 
 Yes -- provided the parts have the same class distribution (e.g., stratified CV). <!-- .element: class="fragment" -->
 
 *To be precise: the arithmetic mean. 
 
 
-### ...or is it?
+## ...or is it?
 
 Is a classifier's *precision* on the entire data set equal to the average of the precisions on the parts? 
 
 **IT IS NOT!**  <!-- .element: class="fragment" -->
 
-Unless the classifier's predictions are equally distributed over the classes on each part, which is (a) very unlikely, and (b) not under the experimenter's control.  <!-- .element: class="fragment" -->
+Unless the classifier's predictions are equally distributed over the classes on each part, which is neither likely nor under the experimenter's control.  <!-- .element: class="fragment" -->
 
 The same applies a fortiori to F-score, which aggregates recall and precision.  <!-- .element: class="fragment" -->
 
 
-### An early result: Precision-Recall-Gain curves
+## An early result: Precision-Recall-Gain curves
 
 ![from ROC via PR to PRG](img/PRG.png)
 
 [Flach, P. and Kull, M., 2015. Precision-recall-gain curves: PR analysis done right. NIPS 2015.](http://people.cs.bris.ac.uk/~flach/PRGcurves)
 
 
-### How we fixed it: change of scale
+## How we fixed it: change of scale
 
 1. Take reciprocals:
 $$
@@ -64,7 +73,7 @@ recG  &= \frac{rec-\pi}{(1-\pi)rec} = 1 - \frac{\pi}{1-\pi} FN/TP \\\\
 $$  <!-- .element: class="fragment" -->
 
 
-### Et voila!
+## Et voila!
 
 ![PR curve](img/fig2-left.png) <!-- .element height="35%" width="35%" -->
 ![PRG curve](img/fig2-right.png) <!-- .element height="35%" width="35%" -->
@@ -73,7 +82,7 @@ $$  <!-- .element: class="fragment" -->
  - convex hull can be used to determine the *optimal operating point* for given precision-recall trade-off.
 
 
-### What I will talk about
+## What I will talk about
 
 - [Scales, units, dimensions and types](#/2)
   - Perspectives from psychology, physics and computer science
@@ -83,7 +92,7 @@ $$  <!-- .element: class="fragment" -->
 
 ----
 
-## Scales, units, dimensions and types
+# Scales, units, dimensions and types
 
 Perhaps surprisingly, there doesn't seem to be a definitive framework to link all these concepts together.
 
@@ -94,7 +103,7 @@ We'll look at it from a few perspectives:
 - [The computer science perspective](#/2/9)
 
 
-## Levels of measurement
+# Levels of measurement
 
 ![Stevens (1946)](img/Stevens1946.gif)  <!-- .element height="20%" width="20%" -->
 ![Stevens' levels](img/StevensTable.png)  <!-- .element height="65%" width="65%" -->
@@ -102,7 +111,7 @@ We'll look at it from a few perspectives:
 Early proposal from a psychologist [(Stevens, 1946)](https://www.jstor.org/stable/1671815), still influential although somewhat rigid and limited.
 
 
-### Stevens' typology
+## Stevens' typology
 
 Scale type | Description | Transformations
 ---|---|---
@@ -114,7 +123,7 @@ Ratio | fixed zero, can choose unit | linear
 The appropriate scale type is determined by the transformation furthest down the list which is still "meaningful".
 
 
-### Admissible statistics
+## Admissible statistics
 
 Scale type | Statistics
 ---|---|---
@@ -126,7 +135,7 @@ Ratio | geometric mean, coefficient of variation
 Each scale type inherits statistics from levels above.
 
 
-### Levels of measurement: discussion
+## Levels of measurement: discussion
 
 1. Many statisticians challenge the rigid connection between scale types and admissible statistics.
   - E.g., Spearman's rank correlation statistic would not be admissible for ordinal data.
@@ -138,7 +147,7 @@ Each scale type inherits statistics from levels above.
 Such scales abound in machine learning!  <!-- .element: class="fragment" -->
 
 
-### Alternative typologies
+## Alternative typologies
 
 [Mosteller and Tukey (1977)](https://books.google.co.uk/books?id=n4dYAAAAMAAJ):
 *Names*,
@@ -162,7 +171,7 @@ Such scales abound in machine learning!  <!-- .element: class="fragment" -->
 *Absolute* (e.g., probabilities).
 
 
-## The physics perspective
+# The physics perspective
 
 - Physical quantities have an associated **dimension** [(Fourier, 1822)](https://books.google.co.uk/books?id=No8IAAAAMAAJ&pg=PA128#v=onepage&q&f=false).
 - In order to be compared and added or subtracted, quantities need to be *commensurable* (have the same dimension).
@@ -171,7 +180,7 @@ Such scales abound in machine learning!  <!-- .element: class="fragment" -->
   - SI units Pascal = Newton/m$^2$ = kg/(m*s$^2$).
 
 
-### Dimensional analysis: discussion
+## Dimensional analysis: discussion
 
 - Dimensions can cancel, leading to *dimensionless quantities*.
   - E.g., angle is a ratio of lengths, hence dimensionless; but it has units (radians, degrees).
@@ -180,7 +189,7 @@ Such scales abound in machine learning!  <!-- .element: class="fragment" -->
   - E.g., $\log V$ where $V$ has dimension $L^3$ should be thought of as $\log (V/v)$ where $v$ is the unit of $V$.
 
 
-### How to build on this in data science and AI?
+## How to build on this in data science and AI?
 
 - Both perspectives (levels of measurement and dimensional analysis) have interesting features but appear overly focused on establishing a 'true' scale type or dimension for a measurement.
   - Machine learning needs something more *flexible*.
@@ -188,7 +197,7 @@ Such scales abound in machine learning!  <!-- .element: class="fragment" -->
     - relative frequencies, probabilities, evaluation metrics...
 
 
-## The computer science perspective
+# The computer science perspective
 
 - *Abstract data types* can be adapted to the situation.
   - provide relevant *meta-data* about measurements
@@ -198,25 +207,25 @@ Such scales abound in machine learning!  <!-- .element: class="fragment" -->
 - The challenge is to develop a generally agreed ["Systeme international"](https://en.wikipedia.org/wiki/International_System_of_Units) of ML measurements.
 
 
-### Example: Shannon entropy
+## Example: Shannon entropy
 
 [![xpecBits Haskell code](img/xpecBits.png)  <!-- .element height="80%" width="80%" -->](https://replit.com/@flach/ThoughtfulWarlikeRuntimelibrary)
 
 
-### Example: Scoring rules
+## Example: Scoring rules
 
 [![Scoring rules](img/genEntropy.png)  <!-- .element height="70%" width="70%" -->](https://replit.com/@flach/KeyBewitchedRoute)
 
 ----
 
-## You can't always measure what you want...
+# You can't always measure what you want...
 
 - Psychologists have long understood that people's abilities (and the difficulty of a task) are *not directly observable* and need to be estimated.
   - **Item-response theory**, factor analysis
 - We can adapt those *latent variable models* to machine learning, to estimate **ability** of classifiers as well as **difficulty** of instances and datasets.
 
 
-### IRT from a machine learning perspective
+## IRT from a machine learning perspective
 
 ![IRT](img/IRT1.png) <!-- .element height="80%" width="80%" -->
 
@@ -225,7 +234,7 @@ Such scales abound in machine learning!  <!-- .element: class="fragment" -->
 - $x_{ij}$: binary response (correct/incorrect)
 
 
-### Beta-IRT
+## Beta-IRT
 
 ![Beta-IRT](img/BIRT1.png) <!-- .element height="80%" width="80%" -->
 
@@ -233,21 +242,21 @@ Such scales abound in machine learning!  <!-- .element: class="fragment" -->
 - abilities & difficulties $\in [0,1]$
 
 
-### Beta-IRT: flexible Item Characteristic Curves
+## Beta-IRT: flexible Item Characteristic Curves
 
 ![Beta-IRT ICC](img/BIRT2.png) <!-- .element height="80%" width="80%" -->
 
 - discrimination $a_j$ can be negative, indicating an item that confuses high-ability participants!  <!-- .element: class="fragment" -->
 
 
-### Idea 1:  Identifying noisy examples
+## Idea 1:  Identifying noisy examples
 
 ![BIRT for noisy examples](img/BIRT3.png) <!-- .element height="65%" width="65%" -->
 
 - [Chen, Y., Prudencio, R.B., Diethe, T. and Flach, P., 2019. $\beta^3$-IRT: A New Item Response Model and its Applications. AISTATS 2019.](http://proceedings.mlr.press/v89/chen19b.html)
 
 
-### Idea 2:  Adaptive testing
+## Idea 2:  Adaptive testing
 
 Use a trained IRT model to evaluate a new classifier on a small number of datasets.
 
@@ -257,7 +266,7 @@ Use a trained IRT model to evaluate a new classifier on a small number of datase
 4. Repeat until stopping criterion is achieved.
 
 
-### CAT results
+## CAT results
 
 ![CAT](img/CAT.png)  <!-- .element height="50%" width="50%" -->
 
@@ -265,7 +274,7 @@ Use a trained IRT model to evaluate a new classifier on a small number of datase
 
 ----
 
-## Outlook
+# Outlook
 
 Ultimately, empirical ML needs to make *causal* statements:
 
@@ -275,7 +284,7 @@ Ultimately, empirical ML needs to make *causal* statements:
   - NB. In empirical ML we can actually carry out interventions, which makes causal inference a whole lot easier!   <!-- .element: class="fragment" -->
 
 
-## Concluding remarks
+# Concluding remarks
 
 Proper treatment of performance evaluation in data science and AI requires a sophisticated **measurement framework** with the following components:
 - *Coherent types and meta-data* for the observable performance indicators;
@@ -283,7 +292,7 @@ Proper treatment of performance evaluation in data science and AI requires a sop
 - *Causal models* to allow for counterfactual reasoning.
 
 
-### Acknowledgements
+## Acknowledgements
 
 Part of this work was funded through a project with the Alan Turing Institute; papers, code and videos can be accessed [here](https://www.turing.ac.uk/research/research-projects/measurement-theory-data-science-and-ai#recent-updates).
 

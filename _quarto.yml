@@ -1,0 +1,41 @@
+project:
+  type: website
+
+website:
+  title: "Peter Flach Slides"
+  reader-mode: true
+  site-url: https://perellonieto.github.io/slides_flach/
+  repo-url: https://github.com/perellonieto/slides_flach
+  repo-branch: quarto
+  repo-actions: [edit, issue]
+  navbar:
+    left:
+      - href: /
+        text: Home
+      - about.md
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - index.md
+      - section: "2023"
+        contents:
+          - 2023_nightingale/index.md
+          - 2023_munich/index.md
+      - section: "2022"
+        contents:
+          - 2022_leuven/index.md
+          - 2022_monash/index.md
+      - about.md
+  page-footer:
+    left: |
+      Peter Flach (University of Bristol)
+    right: |
+      This website was built with <a href="https://quarto.org/">Quarto</a>.
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    revealjs:
+      css: web/css/reveal.css

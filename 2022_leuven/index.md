@@ -1,3 +1,9 @@
+---
+title: The highs and lows of performance evaluation
+subtitle: Towards a measurement theory for machine learning
+format: revealjs
+---
+
 ## Why care about measurement?
 
 Measurements are relevant in data science and AI for at least two reasons:
@@ -14,7 +20,7 @@ If I split a data set in two or more parts, is a classifier's *accuracy* on the 
 
 Yes -- provided the parts are of equal size (e.g., cross-validation).  <!-- .element: class="fragment" -->
 
-What about per-class recall ( = true positive rate)?  <!-- .element: class="fragment" -->
+What about per-class recall?  <!-- .element: class="fragment" -->
 
 Yes -- provided the parts have the same class distribution (e.g., stratified CV). <!-- .element: class="fragment" -->
 
@@ -27,7 +33,7 @@ Is a classifier's *precision* on the entire data set equal to the average of the
 
 **IT IS NOT!**  <!-- .element: class="fragment" -->
 
-Unless the classifier's predictions are equally distributed over the classes on each part, which is neither likely nor under the experimenter's control.  <!-- .element: class="fragment" -->
+Unless the classifier's predictions are equally distributed over the classes on each part, which is (a) very unlikely, and (b) not under the experimenter's control.  <!-- .element: class="fragment" -->
 
 The same applies a fortiori to F-score, which aggregates recall and precision.  <!-- .element: class="fragment" -->
 
