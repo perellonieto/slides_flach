@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Peter Flach Slides - AI in the time of chatGPT</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Peter Flach Slides</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../about.html" aria-current="page">
+ <span class="menu-text">About</span></a>
+  </li>  
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-reader-toggle nav-link" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">AI in the time of chatGPT</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">Home</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">2023</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023_nightingale/index.html" class="sidebar-item-text sidebar-link active">AI in the time of chatGPT</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023_munich/index.html" class="sidebar-item-text sidebar-link">The highs and lows of performance evaluation</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">2022</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2022_leuven/index.html" class="sidebar-item-text sidebar-link">The highs and lows of performance evaluation</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2022_monash/index.html" class="sidebar-item-text sidebar-link">The highs and lows of performance evaluation</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../about.html" class="sidebar-item-text sidebar-link">About</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#ai-in-the-time-of-chatgpt" id="toc-ai-in-the-time-of-chatgpt" class="nav-link active" data-scroll-target="#ai-in-the-time-of-chatgpt">AI in the time of ChatGPT</a>
+  <ul class="collapse">
+  <li><a href="#what-i-will-talk-about" id="toc-what-i-will-talk-about" class="nav-link" data-scroll-target="#what-i-will-talk-about">What I will talk about</a></li>
+  </ul></li>
+  <li><a href="#what-chatgpt-is-and-isnt" id="toc-what-chatgpt-is-and-isnt" class="nav-link" data-scroll-target="#what-chatgpt-is-and-isnt">What ChatGPT is – and isn’t</a>
+  <ul class="collapse">
+  <li><a href="#not-just-a-large-language-model" id="toc-not-just-a-large-language-model" class="nav-link" data-scroll-target="#not-just-a-large-language-model">Not just a large language model</a></li>
+  <li><a href="#training-the-dialogue-model" id="toc-training-the-dialogue-model" class="nav-link" data-scroll-target="#training-the-dialogue-model">Training the dialogue model</a></li>
+  <li><a href="#what-others-say" id="toc-what-others-say" class="nav-link" data-scroll-target="#what-others-say">What others say</a></li>
+  <li><a href="#the-ultimate-bullshit-machine" id="toc-the-ultimate-bullshit-machine" class="nav-link" data-scroll-target="#the-ultimate-bullshit-machine">The ultimate bullshit machine</a></li>
+  <li><a href="#mansplaining-as-a-service" id="toc-mansplaining-as-a-service" class="nav-link" data-scroll-target="#mansplaining-as-a-service">Mansplaining-as-a-Service</a></li>
+  <li><a href="#detour-computer-chess" id="toc-detour-computer-chess" class="nav-link" data-scroll-target="#detour-computer-chess">Detour: “computer” chess</a></li>
+  <li><a href="#a-computer-walks-into-a-chess-tournament" id="toc-a-computer-walks-into-a-chess-tournament" class="nav-link" data-scroll-target="#a-computer-walks-into-a-chess-tournament">A computer walks into a chess tournament…</a></li>
+  <li><a href="#capturing-the-essence-of-human-language" id="toc-capturing-the-essence-of-human-language" class="nav-link" data-scroll-target="#capturing-the-essence-of-human-language">Capturing the essence of human language</a></li>
+  <li><a href="#can-chatgpt-do-reasoning" id="toc-can-chatgpt-do-reasoning" class="nav-link" data-scroll-target="#can-chatgpt-do-reasoning">Can ChatGPT do reasoning?</a></li>
+  <li><a href="#can-chatgpt-do-reasoning-2" id="toc-can-chatgpt-do-reasoning-2" class="nav-link" data-scroll-target="#can-chatgpt-do-reasoning-2">Can ChatGPT do reasoning? (2)</a></li>
+  <li><a href="#can-chatgpt-do-reasoning-3" id="toc-can-chatgpt-do-reasoning-3" class="nav-link" data-scroll-target="#can-chatgpt-do-reasoning-3">Can ChatGPT do reasoning? (3)</a></li>
+  <li><a href="#can-chatgpt-do-reasoning-4" id="toc-can-chatgpt-do-reasoning-4" class="nav-link" data-scroll-target="#can-chatgpt-do-reasoning-4">Can ChatGPT do reasoning? (4)</a></li>
+  <li><a href="#hallucination-and-fact-checking" id="toc-hallucination-and-fact-checking" class="nav-link" data-scroll-target="#hallucination-and-fact-checking">“Hallucination” and fact-checking</a></li>
+  <li><a href="#has-ai-passed-the-turing-test" id="toc-has-ai-passed-the-turing-test" class="nav-link" data-scroll-target="#has-ai-passed-the-turing-test">Has AI passed the Turing Test?</a></li>
+  </ul></li>
+  <li><a href="#we-need-to-talk-about-overconfidence" id="toc-we-need-to-talk-about-overconfidence" class="nav-link" data-scroll-target="#we-need-to-talk-about-overconfidence">We need to talk about (over)confidence</a>
+  <ul class="collapse">
+  <li><a href="#what-is-overconfidence" id="toc-what-is-overconfidence" class="nav-link" data-scroll-target="#what-is-overconfidence">What is overconfidence?</a></li>
+  <li><a href="#why-does-it-matter" id="toc-why-does-it-matter" class="nav-link" data-scroll-target="#why-does-it-matter">Why does it matter?</a></li>
+  <li><a href="#what-to-do-about-overconfidence" id="toc-what-to-do-about-overconfidence" class="nav-link" data-scroll-target="#what-to-do-about-overconfidence">What to do about overconfidence</a></li>
+  <li><a href="#computer-says-i-dont-know" id="toc-computer-says-i-dont-know" class="nav-link" data-scroll-target="#computer-says-i-dont-know">Computer says ‘I Don’t Know’</a></li>
+  </ul></li>
+  <li><a href="#ai-in-the-time-of-chatgpt-1" id="toc-ai-in-the-time-of-chatgpt-1" class="nav-link" data-scroll-target="#ai-in-the-time-of-chatgpt-1">AI in the time of ChatGPT</a>
+  <ul class="collapse">
+  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/perellonieto/slides_flach/edit/quarto/2023_nightingale/index.md" class="toc-action">Edit this page</a></p><p><a href="https://github.com/perellonieto/slides_flach/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">AI in the time of chatGPT</h1>
+<p class="subtitle lead">Is AI solved?</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="ai-in-the-time-of-chatgpt" class="level2">
+<h2 class="anchored" data-anchor-id="ai-in-the-time-of-chatgpt">AI in the time of ChatGPT</h2>
+<blockquote class="blockquote">
+<p>In the time of ChatGPT, artificial intelligence had become a marvel of the modern world, a magical creation that seemed almost alive. It was as if the machines had a soul, capable of understanding and empathizing with human emotions. ChatGPT was a symbol of this new era, a mysterious being with a secret language that only the initiated could understand. But amidst the awe and wonder, there were also whispers of fear, for no one knew what the future held in this age of AI.</p>
+</blockquote>
+<section id="what-i-will-talk-about" class="level3">
+<h3 class="anchored" data-anchor-id="what-i-will-talk-about">What I will talk about</h3>
+<ul>
+<li><a href="#/2">What ChatGPT is – and isn’t</a></li>
+<li><a href="#/3">We need to talk about (over)confidence</a></li>
+<li><a href="#/4">AI in the time of ChatGPT</a></li>
+</ul>
+
+<!--
+ChatGPT makes mistakes with reasoning and arithmetic. But the surprising thing is it can do reasoning and arithmetic at all. This is somehow teased out of the language data. 
+While reasoning, arithmetic and many other are emergent capabilities, this doesn't mean that they can be achieved perfectly by ever larger LMs. 
+Putting linguistic elements together in surprising and potentially novel ways is the essence of language, so "hallucination" shouldn't come as a surprise. "Generate something that looks like a URL/literature reference etc." This exemplifies the need for fact-checking (easy in the case of URLs). 
+Achievements on "human" tasks have three ingredients: machine, human, task. E.g. Deep Blue, Kasparov, chess; AlphaGo, Lee Se Dong, Go. Conclusions should involve the triple: e.g., chess is more suited to algorithmic treatment than we thought. 
+Games like chess and Go have emerged at a sweet spot: it can be played by children, but only few can play it really well. 
+Nobody is surprised if the world champion mental calculation is beaten by a computer; or if the world champion road cycling is beaten by a motorbike. 
+(something about models as a commodity)
+(DNNs' modular design make them particularly suitable for finetuning and transfer learning)
+(something about neuro-symbolic AI?)
+
+Foster: these systems are designed to make stuff up
+-->
+<hr>
+</section>
+</section>
+<section id="what-chatgpt-is-and-isnt" class="level2">
+<h2 class="anchored" data-anchor-id="what-chatgpt-is-and-isnt">What ChatGPT is – and isn’t</h2>
+<ul>
+<li>ChatGPT = large language model + <em>dialogue model</em></li>
+<li>We’ll look at ways to think about its capabilities.</li>
+</ul>
+<section id="not-just-a-large-language-model" class="level3">
+<h3 class="anchored" data-anchor-id="not-just-a-large-language-model">Not just a large language model</h3>
+<p><img src="img/chatGPT.jpg" class="img-fluid" alt="ChatGPT schematic"><!-- .element  height="80%" width="80%" --></p>
+<p><a href="https://blog.bytebytego.com/p/ep-44-how-does-ChatGPT-work">from https://blog.bytebytego.com/p/ep-44-how-does-ChatGPT-work</a></p>
+</section>
+<section id="training-the-dialogue-model" class="level3">
+<h3 class="anchored" data-anchor-id="training-the-dialogue-model">Training the dialogue model</h3>
+<p><img src="img/finetuning.jpg" class="img-fluid" alt="ChatGPT finetuing"><!-- .element  height="80%" width="80%" --></p>
+<p><a href="https://openai.com/blog/ChatGPT">from https://openai.com/blog/ChatGPT</a></p>
+</section>
+<section id="what-others-say" class="level3">
+<h3 class="anchored" data-anchor-id="what-others-say">What others say</h3>
+<blockquote class="blockquote">
+<p>Sometimes I think it’s as if aliens had landed and people haven’t realized because they speak very good English.</p>
+</blockquote>
+<p><a href="https://www.technologyreview.com/2023/05/02/1072528/geoffrey-hinton-google-why-scared-ai/">Geoffrey Hinton in an interview with MIT Technology Review</a></p>
+</section>
+<section id="the-ultimate-bullshit-machine" class="level3">
+<h3 class="anchored" data-anchor-id="the-ultimate-bullshit-machine">The ultimate bullshit machine</h3>
+<blockquote class="blockquote">
+<p>For the bullshitter [all] bets are off: he is neither on the side of the true nor on the side of the false. His eye is not on the facts at all, as the eyes of the honest man and of the liar are, except insofar as they may be pertinent to his interest in getting away with what he says. He does not care whether the things he says describe reality correctly.</p>
+</blockquote>
+<p><a href="https://press.princeton.edu/books/hardcover/9780691122946/on-bullshit">Harry Frankfurt, On Bullshit. Princeton University Press, 2005.</a></p>
+</section>
+<section id="mansplaining-as-a-service" class="level3">
+<h3 class="anchored" data-anchor-id="mansplaining-as-a-service">Mansplaining-as-a-Service</h3>
+<p><img src="img/mansplaining.jpg" class="img-fluid" alt="https://pullpatch.com/products/ladies-mansplaining-is-short-for-man-explaining-removable-patch"><!-- .element align="right" height="35%" width="35%" --></p>
+<p>“If someone perceives my responses as mansplaining, I apologize and encourage them to provide specific feedback on how I can improve and be more respectful in my interactions.” (ChatGPT)</p>
+</section>
+<section id="detour-computer-chess" class="level3">
+<h3 class="anchored" data-anchor-id="detour-computer-chess">Detour: “computer” chess</h3>
+<p><img src="img/MechanicalTurk.jpg" class="img-fluid" alt="The original Mechanical Turk"><!-- .element align="left" height="30%" width="30%" --> <img src="img/kasparov.jpg" class="img-fluid" alt="PF &amp; GK"><!-- .element align="right" height="50%" width="50%" --></p>
+</section>
+<section id="a-computer-walks-into-a-chess-tournament" class="level3">
+<h3 class="anchored" data-anchor-id="a-computer-walks-into-a-chess-tournament">A computer walks into a chess tournament…</h3>
+<p><img src="img/DeepBlue.jpg" class="img-fluid" alt="Garry Kasparov against Deep Blue (1997)"><!-- .element align="right" height="35%" width="35%" --></p>
+<p>…and beats a chess grandmaster.</p>
+<p>Does that say something about <!-- .element: class="fragment" --> - computers? <!-- .element: class="fragment" --> - humans? <!-- .element: class="fragment" --> - chess? <!-- .element: class="fragment" --></p>
+</section>
+<section id="capturing-the-essence-of-human-language" class="level3">
+<h3 class="anchored" data-anchor-id="capturing-the-essence-of-human-language">Capturing the essence of human language</h3>
+<blockquote class="blockquote">
+<p>I think we have to view this as a – potentially surprising – scientific discovery: that somehow in a neural net like ChatGPT’s it’s possible to capture the essence of what human brains manage to do in generating language.</p>
+</blockquote>
+<p><a href="https://writings.stephenwolfram.com/2023/02/what-is-ChatGPT-doing-and-why-does-it-work/">Stephen Wolfram: What Is ChatGPT Doing … and Why Does It Work?</a></p>
+</section>
+<section id="can-chatgpt-do-reasoning" class="level3">
+<h3 class="anchored" data-anchor-id="can-chatgpt-do-reasoning">Can ChatGPT do reasoning?</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/timeslots.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Timeslots</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="can-chatgpt-do-reasoning-2" class="level3">
+<h3 class="anchored" data-anchor-id="can-chatgpt-do-reasoning-2">Can ChatGPT do reasoning? (2)</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/trophy.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Trophy &amp; suitcase</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="can-chatgpt-do-reasoning-3" class="level3">
+<h3 class="anchored" data-anchor-id="can-chatgpt-do-reasoning-3">Can ChatGPT do reasoning? (3)</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/cars.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Cars</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="can-chatgpt-do-reasoning-4" class="level3">
+<h3 class="anchored" data-anchor-id="can-chatgpt-do-reasoning-4">Can ChatGPT do reasoning? (4)</h3>
+<ul>
+<li>Amusing mistakes like these aside, it is rather remarkable that (limited) reasoning capabilities have arisen without having been explicitly trained on such tasks.</li>
+<li>This demonstrates the surprising power of large language data.</li>
+</ul>
+</section>
+<section id="hallucination-and-fact-checking" class="level3">
+<h3 class="anchored" data-anchor-id="hallucination-and-fact-checking">“Hallucination” and fact-checking</h3>
+<ul>
+<li>Putting linguistic elements together in surprising and potentially novel ways is the essence of language, so “hallucination” or “confabulation” shouldn’t come as a surprise.</li>
+<li>The following are two very different things:
+<ul>
+<li>“Generate something that looks like a URL”;</li>
+<li>“Generate an existing and meaningful URL”.</li>
+</ul></li>
+<li>Some forms of fact-checking can be done post-hoc, but others will need to be built into the language model.</li>
+</ul>
+</section>
+<section id="has-ai-passed-the-turing-test" class="level3">
+<h3 class="anchored" data-anchor-id="has-ai-passed-the-turing-test">Has AI passed the Turing Test?</h3>
+<p>I am not aware of a formally run Turing Test with ChatGPT or one of the other LLM-driven chatbots, but…</p>
+<p>…it seems obvious to me that the imitation game has lost its relevance, and we need something new. <!-- .element: class="fragment" --></p>
+<hr>
+</section>
+</section>
+<section id="we-need-to-talk-about-overconfidence" class="level2">
+<h2 class="anchored" data-anchor-id="we-need-to-talk-about-overconfidence">We need to talk about (over)confidence</h2>
+<section id="what-is-overconfidence" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-overconfidence">What is overconfidence?</h3>
+<p><img src="img/overconfidence.jpg" class="img-fluid" alt="Overconfidence"> <!-- .element align="right" height="40%" width="40%" --></p>
+<p>An overconfident classifier thinks it’s better at separating classes than it actually is.</p>
+<p>Hence we need to make predicted probabilities less extreme by pushing them toward the centre. <!-- .element: class="fragment" --></p>
+</section>
+<section id="why-does-it-matter" class="level3">
+<h3 class="anchored" data-anchor-id="why-does-it-matter">Why does it matter?</h3>
+<p>Optimal decisions can <strong>only</strong> be made with calibrated probabilities. - Example: If we trained on balanced classes but want to deploy with 4 times as many positives compared to negatives, we lower the decision threshold to 0.2. <!-- .element: class="fragment" --> - With a poor probability estimator such as naive Bayes, decision thresholds have to be learned. <!-- .element: class="fragment" --></p>
+</section>
+<section id="what-to-do-about-overconfidence" class="level3">
+<h3 class="anchored" data-anchor-id="what-to-do-about-overconfidence">What to do about overconfidence</h3>
+<p><img src="img/betacal.jpg" class="img-fluid" alt="Betacal"> <!-- .element height="50%" width="50%" --></p>
+<p><a href="https://link.springer.com/article/10.1007/s10994-023-06336-7">Shameless plug</a> <!-- .element: class="fragment" --></p>
+</section>
+<section id="computer-says-i-dont-know" class="level3">
+<h3 class="anchored" data-anchor-id="computer-says-i-dont-know">Computer says ‘I Don’t Know’</h3>
+<p><img src="img/LB.jpg" class="img-fluid" alt="Little Britain"> <!-- .element align="right" height="200px" --></p>
+<p><a href="https://reframe.github.io/background_check/">Background Check: A general technique to build more reliable and versatile classifiers (ICDM 2016)</a></p>
+<hr>
+</section>
+</section>
+<section id="ai-in-the-time-of-chatgpt-1" class="level2">
+<h2 class="anchored" data-anchor-id="ai-in-the-time-of-chatgpt-1">AI in the time of ChatGPT</h2>
+<ul>
+<li>The distinction between learning and reasoning is much less clearcut once you train on language data.</li>
+<li>It is to be expected that other task layers on top of LLMs will give rise to many other capabilities.</li>
+<li>How such capabilities can be assessed and measured is a wide-open question, see e.g.&nbsp;<a href="https://arxiv.org/abs/2206.04615">Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models</a>.</li>
+<li>Properly quantifying confidence and imbuing AI with the capability to say ‘I don’t know’ is key for trustworthiness.</li>
+</ul>
+<section id="acknowledgements" class="level3">
+<h3 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h3>
+<p>Many thanks to collaborators Yu Chen, Tom Diethe, Jose Hernandez-Orallo, Meelis Kull, Miquel Perello-Nieto, Ricardo Prudencio, Raul Santos-Rodriguez, Telmo Silva Filho, Kacper Sokol, Hao Song, and many others.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Peter Flach (University of Bristol)</div>   
+    <div class="nav-footer-right">This website was built with <a href="https://quarto.org/">Quarto</a>.</div>
+  </div>
+</footer>
+
+
+
+</body></html>

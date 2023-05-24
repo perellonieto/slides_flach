@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Peter Flach Slides - The highs and lows of performance evaluation</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Peter Flach Slides</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../about.html" aria-current="page">
+ <span class="menu-text">About</span></a>
+  </li>  
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-reader-toggle nav-link" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">The highs and lows of performance evaluation</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">Home</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">2023</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023_nightingale/index.html" class="sidebar-item-text sidebar-link">AI in the time of chatGPT</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2023_munich/index.html" class="sidebar-item-text sidebar-link active">The highs and lows of performance evaluation</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">2022</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2022_leuven/index.html" class="sidebar-item-text sidebar-link">The highs and lows of performance evaluation</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2022_monash/index.html" class="sidebar-item-text sidebar-link">The highs and lows of performance evaluation</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../about.html" class="sidebar-item-text sidebar-link">About</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#why-care-about-measurement" id="toc-why-care-about-measurement" class="nav-link active" data-scroll-target="#why-care-about-measurement">Why care about measurement?</a>
+  <ul class="collapse">
+  <li><a href="#performance-measurement-is-easy" id="toc-performance-measurement-is-easy" class="nav-link" data-scroll-target="#performance-measurement-is-easy">Performance measurement is easy…</a></li>
+  <li><a href="#or-is-it" id="toc-or-is-it" class="nav-link" data-scroll-target="#or-is-it">…or is it?</a></li>
+  <li><a href="#an-early-result-precision-recall-gain-curves" id="toc-an-early-result-precision-recall-gain-curves" class="nav-link" data-scroll-target="#an-early-result-precision-recall-gain-curves">An early result: Precision-Recall-Gain curves</a></li>
+  <li><a href="#how-we-fixed-it-change-of-scale" id="toc-how-we-fixed-it-change-of-scale" class="nav-link" data-scroll-target="#how-we-fixed-it-change-of-scale">How we fixed it: change of scale</a></li>
+  <li><a href="#et-voila" id="toc-et-voila" class="nav-link" data-scroll-target="#et-voila">Et voila!</a></li>
+  <li><a href="#what-i-will-talk-about" id="toc-what-i-will-talk-about" class="nav-link" data-scroll-target="#what-i-will-talk-about">What I will talk about</a></li>
+  </ul></li>
+  <li><a href="#scales-units-dimensions-and-types" id="toc-scales-units-dimensions-and-types" class="nav-link" data-scroll-target="#scales-units-dimensions-and-types">Scales, units, dimensions and types</a></li>
+  <li><a href="#levels-of-measurement" id="toc-levels-of-measurement" class="nav-link" data-scroll-target="#levels-of-measurement">Levels of measurement</a>
+  <ul class="collapse">
+  <li><a href="#stevens-typology" id="toc-stevens-typology" class="nav-link" data-scroll-target="#stevens-typology">Stevens’ typology</a></li>
+  <li><a href="#admissible-statistics" id="toc-admissible-statistics" class="nav-link" data-scroll-target="#admissible-statistics">Admissible statistics</a></li>
+  <li><a href="#levels-of-measurement-discussion" id="toc-levels-of-measurement-discussion" class="nav-link" data-scroll-target="#levels-of-measurement-discussion">Levels of measurement: discussion</a></li>
+  <li><a href="#alternative-typologies" id="toc-alternative-typologies" class="nav-link" data-scroll-target="#alternative-typologies">Alternative typologies</a></li>
+  </ul></li>
+  <li><a href="#the-physics-perspective" id="toc-the-physics-perspective" class="nav-link" data-scroll-target="#the-physics-perspective">The physics perspective</a>
+  <ul class="collapse">
+  <li><a href="#dimensional-analysis-discussion" id="toc-dimensional-analysis-discussion" class="nav-link" data-scroll-target="#dimensional-analysis-discussion">Dimensional analysis: discussion</a></li>
+  <li><a href="#how-to-build-on-this-in-data-science-and-ai" id="toc-how-to-build-on-this-in-data-science-and-ai" class="nav-link" data-scroll-target="#how-to-build-on-this-in-data-science-and-ai">How to build on this in data science and AI?</a></li>
+  </ul></li>
+  <li><a href="#the-computer-science-perspective" id="toc-the-computer-science-perspective" class="nav-link" data-scroll-target="#the-computer-science-perspective">The computer science perspective</a>
+  <ul class="collapse">
+  <li><a href="#example-shannon-entropy" id="toc-example-shannon-entropy" class="nav-link" data-scroll-target="#example-shannon-entropy">Example: Shannon entropy</a></li>
+  <li><a href="#example-scoring-rules" id="toc-example-scoring-rules" class="nav-link" data-scroll-target="#example-scoring-rules">Example: Scoring rules</a></li>
+  </ul></li>
+  <li><a href="#you-cant-always-measure-what-you-want" id="toc-you-cant-always-measure-what-you-want" class="nav-link" data-scroll-target="#you-cant-always-measure-what-you-want">You can’t always measure what you want…</a>
+  <ul class="collapse">
+  <li><a href="#irt-from-a-machine-learning-perspective" id="toc-irt-from-a-machine-learning-perspective" class="nav-link" data-scroll-target="#irt-from-a-machine-learning-perspective">IRT from a machine learning perspective</a></li>
+  <li><a href="#beta-irt" id="toc-beta-irt" class="nav-link" data-scroll-target="#beta-irt">Beta-IRT</a></li>
+  <li><a href="#beta-irt-flexible-item-characteristic-curves" id="toc-beta-irt-flexible-item-characteristic-curves" class="nav-link" data-scroll-target="#beta-irt-flexible-item-characteristic-curves">Beta-IRT: flexible Item Characteristic Curves</a></li>
+  <li><a href="#idea-1-identifying-noisy-examples" id="toc-idea-1-identifying-noisy-examples" class="nav-link" data-scroll-target="#idea-1-identifying-noisy-examples">Idea 1: Identifying noisy examples</a></li>
+  <li><a href="#idea-2-adaptive-testing" id="toc-idea-2-adaptive-testing" class="nav-link" data-scroll-target="#idea-2-adaptive-testing">Idea 2: Adaptive testing</a></li>
+  <li><a href="#cat-results" id="toc-cat-results" class="nav-link" data-scroll-target="#cat-results">CAT results</a></li>
+  </ul></li>
+  <li><a href="#outlook" id="toc-outlook" class="nav-link" data-scroll-target="#outlook">Outlook</a></li>
+  <li><a href="#concluding-remarks" id="toc-concluding-remarks" class="nav-link" data-scroll-target="#concluding-remarks">Concluding remarks</a>
+  <ul class="collapse">
+  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/perellonieto/slides_flach/edit/quarto/2023_munich/index.md" class="toc-action">Edit this page</a></p><p><a href="https://github.com/perellonieto/slides_flach/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">The highs and lows of performance evaluation</h1>
+<p class="subtitle lead">Towards a measurement theory for machine learning</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="why-care-about-measurement" class="level2">
+<h2 class="anchored" data-anchor-id="why-care-about-measurement">Why care about measurement?</h2>
+<p>Measurements are relevant in data science and AI for at least two reasons: - <em>Features</em> often are measurements on some scale, which dictates admissible statistics and operations. - E.g., taking the expectation assumes a linear scale. - <em>Performance metrics</em> are also measurements, and hence the same applies.</p>
+<p><a href="https://www.turing.ac.uk/research/research-projects/measurement-theory-data-science-and-ai">This project</a> looked at foundational issues, of which there are many!</p>
+<section id="performance-measurement-is-easy" class="level3">
+<h3 class="anchored" data-anchor-id="performance-measurement-is-easy">Performance measurement is easy…</h3>
+<p>If I split a data set in two or more parts, is a classifier’s <em>accuracy</em> on the entire data set equal to the average* of the accuracies on the separate parts?</p>
+<p>Yes – provided the parts are of equal size (e.g., cross-validation). <!-- .element: class="fragment" --></p>
+<p>What about per-class recall ( = true positive rate)? <!-- .element: class="fragment" --></p>
+<p>Yes – provided the parts have the same class distribution (e.g., stratified CV). <!-- .element: class="fragment" --></p>
+<p>*To be precise: the arithmetic mean.</p>
+</section>
+<section id="or-is-it" class="level3">
+<h3 class="anchored" data-anchor-id="or-is-it">…or is it?</h3>
+<p>Is a classifier’s <em>precision</em> on the entire data set equal to the average of the precisions on the parts?</p>
+<p><strong>IT IS NOT!</strong> <!-- .element: class="fragment" --></p>
+<p>Unless the classifier’s predictions are equally distributed over the classes on each part, which is neither likely nor under the experimenter’s control. <!-- .element: class="fragment" --></p>
+<p>The same applies a fortiori to F-score, which aggregates recall and precision. <!-- .element: class="fragment" --></p>
+</section>
+<section id="an-early-result-precision-recall-gain-curves" class="level3">
+<h3 class="anchored" data-anchor-id="an-early-result-precision-recall-gain-curves">An early result: Precision-Recall-Gain curves</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/PRG.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">from ROC via PR to PRG</figcaption><p></p>
+</figure>
+</div>
+<p><a href="http://people.cs.bris.ac.uk/~flach/PRGcurves">Flach, P. and Kull, M., 2015. Precision-recall-gain curves: PR analysis done right. NIPS 2015.</a></p>
+</section>
+<section id="how-we-fixed-it-change-of-scale" class="level3">
+<h3 class="anchored" data-anchor-id="how-we-fixed-it-change-of-scale">How we fixed it: change of scale</h3>
+<ol type="1">
+<li>Take reciprocals: <span class="math display">\[
+\begin{align}
+prec &amp;= TP/(TP+FP) \rightarrow 1/prec = 1+FP/TP \\\\
+rec  &amp;= TP/(TP+FN) \rightarrow 1/rec  = 1+FN/TP \\\\
+\\ \\\\
+\end{align}
+\]</span></li>
+<li>Clip <span class="math inline">\([1,\infty]\)</span> to <span class="math inline">\([1,1/\pi]\)</span> to exlude overly small values of precision/recall. <span class="math display">\[
+\begin{align}
+\\ \\\\
+\end{align}
+\]</span> <!-- .element: class="fragment" --></li>
+<li>Map <span class="math inline">\([1,1/\pi]\)</span> back to unit interval: <span class="math display">\[
+\begin{align}
+precG &amp;= \frac{prec-\pi}{(1-\pi)prec} = 1 - \frac{\pi}{1-\pi} FP/TP \\\\
+recG  &amp;= \frac{rec-\pi}{(1-\pi)rec} = 1 - \frac{\pi}{1-\pi} FN/TP \\\\
+\end{align}
+\]</span> <!-- .element: class="fragment" --></li>
+</ol>
+</section>
+<section id="et-voila" class="level3">
+<h3 class="anchored" data-anchor-id="et-voila">Et voila!</h3>
+<p><img src="img/fig2-left.png" class="img-fluid" alt="PR curve"> <!-- .element height="35%" width="35%" --> <img src="img/fig2-right.png" class="img-fluid" alt="PRG curve"> <!-- .element height="35%" width="35%" --></p>
+<ul>
+<li>area under PRG curve <span class="math inline">\(\propto\)</span> <em>expected <span class="math inline">\(F_1\)</span> score</em>;</li>
+<li>convex hull can be used to determine the <em>optimal operating point</em> for given precision-recall trade-off.</li>
+</ul>
+</section>
+<section id="what-i-will-talk-about" class="level3">
+<h3 class="anchored" data-anchor-id="what-i-will-talk-about">What I will talk about</h3>
+<ul>
+<li><a href="#/2">Scales, units, dimensions and types</a>
+<ul>
+<li>Perspectives from psychology, physics and computer science</li>
+</ul></li>
+<li><a href="#/3">You can’t always measure what you want</a>
+<ul>
+<li>Latent variable models</li>
+</ul></li>
+<li><a href="#/4">Conclusions and outlook</a></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="scales-units-dimensions-and-types" class="level2">
+<h2 class="anchored" data-anchor-id="scales-units-dimensions-and-types">Scales, units, dimensions and types</h2>
+<p>Perhaps surprisingly, there doesn’t seem to be a definitive framework to link all these concepts together.</p>
+<p>We’ll look at it from a few perspectives:</p>
+<ul>
+<li><a href="#/2/1">Levels of measurement</a></li>
+<li><a href="#/2/6">The physics perspective</a></li>
+<li><a href="#/2/9">The computer science perspective</a></li>
+</ul>
+</section>
+<section id="levels-of-measurement" class="level2">
+<h2 class="anchored" data-anchor-id="levels-of-measurement">Levels of measurement</h2>
+<p><img src="img/Stevens1946.gif" class="img-fluid" alt="Stevens (1946)"> <!-- .element height="20%" width="20%" --> <img src="img/StevensTable.png" class="img-fluid" alt="Stevens’ levels"> <!-- .element height="65%" width="65%" --></p>
+<p>Early proposal from a psychologist <a href="https://www.jstor.org/stable/1671815">(Stevens, 1946)</a>, still influential although somewhat rigid and limited.</p>
+<section id="stevens-typology" class="level3">
+<h3 class="anchored" data-anchor-id="stevens-typology">Stevens’ typology</h3>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Scale type</th>
+<th>Description</th>
+<th>Transformations</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Nominal</td>
+<td>no order, no unit</td>
+<td>permutation</td>
+</tr>
+<tr class="even">
+<td>Ordinal</td>
+<td>order, no unit</td>
+<td>monotone</td>
+</tr>
+<tr class="odd">
+<td>Interval</td>
+<td>can choose unit and zero</td>
+<td>affine</td>
+</tr>
+<tr class="even">
+<td>Ratio</td>
+<td>fixed zero, can choose unit</td>
+<td>linear</td>
+</tr>
+</tbody>
+</table>
+<p>The appropriate scale type is determined by the transformation furthest down the list which is still “meaningful”.</p>
+</section>
+<section id="admissible-statistics" class="level3">
+<h3 class="anchored" data-anchor-id="admissible-statistics">Admissible statistics</h3>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Scale type</th>
+<th>Statistics</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Nominal</td>
+<td>mode</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Ordinal</td>
+<td>median, quantile, range</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Interval</td>
+<td>arithmetic mean, variance</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Ratio</td>
+<td>geometric mean, coefficient of variation</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Each scale type inherits statistics from levels above.</p>
+</section>
+<section id="levels-of-measurement-discussion" class="level3">
+<h3 class="anchored" data-anchor-id="levels-of-measurement-discussion">Levels of measurement: discussion</h3>
+<ol type="1">
+<li>Many statisticians challenge the rigid connection between scale types and admissible statistics.</li>
+</ol>
+<ul>
+<li>E.g., Spearman’s rank correlation statistic would not be admissible for ordinal data.</li>
+</ul>
+<ol start="2" type="1">
+<li>Many common scales do not fit well:</li>
+</ol>
+<ul>
+<li>scales bounded from both sides;</li>
+<li>scales with a fixed unit;</li>
+<li>integer measurements.</li>
+</ul>
+<p>Such scales abound in machine learning! <!-- .element: class="fragment" --></p>
+</section>
+<section id="alternative-typologies" class="level3">
+<h3 class="anchored" data-anchor-id="alternative-typologies">Alternative typologies</h3>
+<p><a href="https://books.google.co.uk/books?id=n4dYAAAAMAAJ">Mosteller and Tukey (1977)</a>: <em>Names</em>, <em>Grades</em> (e.g., beginner, intermediate, advanced), <em>Ranks</em> (1, 2, …), <em>Counted fractions</em> (e.g., percentages), <em>Counts</em> (non-negative integers), <em>Amounts</em> (non-negative real numbers), <em>Balances</em> (unbounded, positive or negative values).</p>
+<p><a href="https://doi.org/10.1559/152304098782383043">Chrisman (1998)</a>: <em>Nominal</em>, <em>Graded membership</em> (e.g., fuzzy sets), <em>Ordinal</em>, <em>Interval</em>, <em>Log-interval</em>, <em>Extensive ratio</em>, <em>Cyclical ratio</em> (e.g., angles or time of day) <em>Derived ratio</em>, <em>Counts</em>, <em>Absolute</em> (e.g., probabilities).</p>
+</section>
+</section>
+<section id="the-physics-perspective" class="level2">
+<h2 class="anchored" data-anchor-id="the-physics-perspective">The physics perspective</h2>
+<ul>
+<li>Physical quantities have an associated <strong>dimension</strong> <a href="https://books.google.co.uk/books?id=No8IAAAAMAAJ&amp;pg=PA128#v=onepage&amp;q&amp;f=false">(Fourier, 1822)</a>.</li>
+<li>In order to be compared and added or subtracted, quantities need to be <em>commensurable</em> (have the same dimension).</li>
+<li>Incommensurable quantities may be multiplied and divided, giving new derived dimensions.
+<ul>
+<li>E.g. pressure has dimension <span class="math inline">\(M L^{-1} T^{-2}\)</span></li>
+<li>SI units Pascal = Newton/m<span class="math inline">\(^2\)</span> = kg/(m*s<span class="math inline">\(^2\)</span>).</li>
+</ul></li>
+</ul>
+<section id="dimensional-analysis-discussion" class="level3">
+<h3 class="anchored" data-anchor-id="dimensional-analysis-discussion">Dimensional analysis: discussion</h3>
+<ul>
+<li>Dimensions can cancel, leading to <em>dimensionless quantities</em>.
+<ul>
+<li>E.g., angle is a ratio of lengths, hence dimensionless; but it has units (radians, degrees).</li>
+<li>Sometimes units also cancel, e.g.&nbsp;ABV has unit ml ethanol per 100 ml liquid (percentage).</li>
+</ul></li>
+<li>Transcendental functions (<span class="math inline">\(\exp\)</span>, <span class="math inline">\(\sin\)</span> etc.) require dimensionless and <em>unitless</em> quantities.
+<ul>
+<li>E.g., <span class="math inline">\(\log V\)</span> where <span class="math inline">\(V\)</span> has dimension <span class="math inline">\(L^3\)</span> should be thought of as <span class="math inline">\(\log (V/v)\)</span> where <span class="math inline">\(v\)</span> is the unit of <span class="math inline">\(V\)</span>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="how-to-build-on-this-in-data-science-and-ai" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-build-on-this-in-data-science-and-ai">How to build on this in data science and AI?</h3>
+<ul>
+<li>Both perspectives (levels of measurement and dimensional analysis) have interesting features but appear overly focused on establishing a ‘true’ scale type or dimension for a measurement.
+<ul>
+<li>Machine learning needs something more <em>flexible</em>.</li>
+<li>In particular, a better treatment of “dimensionless” quantities which are everywhere you look!
+<ul>
+<li>relative frequencies, probabilities, evaluation metrics…</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="the-computer-science-perspective" class="level2">
+<h2 class="anchored" data-anchor-id="the-computer-science-perspective">The computer science perspective</h2>
+<ul>
+<li><em>Abstract data types</em> can be adapted to the situation.
+<ul>
+<li>provide relevant <em>meta-data</em> about measurements</li>
+<li>link to useful <em>operations</em>.</li>
+</ul></li>
+<li>In particular, <strong>higher-order functional languages</strong> such as Haskell allow reasoning with and about types.
+<ul>
+<li>This provides a formal language and logic for measurement meta-data.</li>
+</ul></li>
+<li>The challenge is to develop a generally agreed <a href="https://en.wikipedia.org/wiki/International_System_of_Units">“Systeme international”</a> of ML measurements.</li>
+</ul>
+<section id="example-shannon-entropy" class="level3">
+<h3 class="anchored" data-anchor-id="example-shannon-entropy">Example: Shannon entropy</h3>
+<p><a href="https://replit.com/@flach/ThoughtfulWarlikeRuntimelibrary"><img src="img/xpecBits.png" class="img-fluid" alt="xpecBits Haskell code"> <!-- .element height="80%" width="80%" --></a></p>
+</section>
+<section id="example-scoring-rules" class="level3">
+<h3 class="anchored" data-anchor-id="example-scoring-rules">Example: Scoring rules</h3>
+<p><a href="https://replit.com/@flach/KeyBewitchedRoute"><img src="img/genEntropy.png" class="img-fluid" alt="Scoring rules"> <!-- .element height="70%" width="70%" --></a></p>
+<hr>
+</section>
+</section>
+<section id="you-cant-always-measure-what-you-want" class="level2">
+<h2 class="anchored" data-anchor-id="you-cant-always-measure-what-you-want">You can’t always measure what you want…</h2>
+<ul>
+<li>Psychologists have long understood that people’s abilities (and the difficulty of a task) are <em>not directly observable</em> and need to be estimated.
+<ul>
+<li><strong>Item-response theory</strong>, factor analysis</li>
+</ul></li>
+<li>We can adapt those <em>latent variable models</em> to machine learning, to estimate <strong>ability</strong> of classifiers as well as <strong>difficulty</strong> of instances and datasets.</li>
+</ul>
+<section id="irt-from-a-machine-learning-perspective" class="level3">
+<h3 class="anchored" data-anchor-id="irt-from-a-machine-learning-perspective">IRT from a machine learning perspective</h3>
+<p><img src="img/IRT1.png" class="img-fluid" alt="IRT"> <!-- .element height="80%" width="80%" --></p>
+<ul>
+<li><span class="math inline">\(\theta_i\)</span>: ability of participant <span class="math inline">\(i\)</span></li>
+<li><span class="math inline">\(\delta_j\)</span>, <span class="math inline">\(a_j\)</span>: difficulty &amp; discrimination of item <span class="math inline">\(j\)</span></li>
+<li><span class="math inline">\(x_{ij}\)</span>: binary response (correct/incorrect)</li>
+</ul>
+</section>
+<section id="beta-irt" class="level3">
+<h3 class="anchored" data-anchor-id="beta-irt">Beta-IRT</h3>
+<p><img src="img/BIRT1.png" class="img-fluid" alt="Beta-IRT"> <!-- .element height="80%" width="80%" --></p>
+<ul>
+<li>continuous responses <span class="math inline">\(p_{ij}\)</span></li>
+<li>abilities &amp; difficulties <span class="math inline">\(\in [0,1]\)</span></li>
+</ul>
+</section>
+<section id="beta-irt-flexible-item-characteristic-curves" class="level3">
+<h3 class="anchored" data-anchor-id="beta-irt-flexible-item-characteristic-curves">Beta-IRT: flexible Item Characteristic Curves</h3>
+<p><img src="img/BIRT2.png" class="img-fluid" alt="Beta-IRT ICC"> <!-- .element height="80%" width="80%" --></p>
+<ul>
+<li>discrimination <span class="math inline">\(a_j\)</span> can be negative, indicating an item that confuses high-ability participants! <!-- .element: class="fragment" --></li>
+</ul>
+</section>
+<section id="idea-1-identifying-noisy-examples" class="level3">
+<h3 class="anchored" data-anchor-id="idea-1-identifying-noisy-examples">Idea 1: Identifying noisy examples</h3>
+<p><img src="img/BIRT3.png" class="img-fluid" alt="BIRT for noisy examples"> <!-- .element height="65%" width="65%" --></p>
+<ul>
+<li><a href="http://proceedings.mlr.press/v89/chen19b.html">Chen, Y., Prudencio, R.B., Diethe, T. and Flach, P., 2019. <span class="math inline">\(\beta^3\)</span>-IRT: A New Item Response Model and its Applications. AISTATS 2019.</a></li>
+</ul>
+</section>
+<section id="idea-2-adaptive-testing" class="level3">
+<h3 class="anchored" data-anchor-id="idea-2-adaptive-testing">Idea 2: Adaptive testing</h3>
+<p>Use a trained IRT model to evaluate a new classifier on a small number of datasets.</p>
+<ol type="1">
+<li>Start with initial guess of classifier ability.</li>
+<li>Choose next dataset using an <em>item selection criterion</em>.</li>
+<li>Evaluate classifier and update ability estimation.</li>
+<li>Repeat until stopping criterion is achieved.</li>
+</ol>
+</section>
+<section id="cat-results" class="level3">
+<h3 class="anchored" data-anchor-id="cat-results">CAT results</h3>
+<p><img src="img/CAT.png" class="img-fluid" alt="CAT"> <!-- .element height="50%" width="50%" --></p>
+<ul>
+<li><a href="https://ijimai.org/journal/bibcite/reference/2901">Song, H. and Flach, P., 2020. Efficient and Robust Model Benchmarks with Item Response Theory and Adaptive Testing. Int J Interactive Multimedia and AI 2021.</a></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="outlook" class="level2">
+<h2 class="anchored" data-anchor-id="outlook">Outlook</h2>
+<p>Ultimately, empirical ML needs to make <em>causal</em> statements:</p>
+<blockquote class="blockquote">
+<p>Algorithm A outperformed algorithm B <strong>because</strong> the classes were highly imbalanced.</p>
+</blockquote>
+<ul>
+<li>I.e., with re-balanced classes (counterfactual intervention) the difference in performance would disappear. <!-- .element: class="fragment" -->
+<ul>
+<li>NB. In empirical ML we can actually carry out interventions, which makes causal inference a whole lot easier! <!-- .element: class="fragment" --></li>
+</ul></li>
+</ul>
+</section>
+<section id="concluding-remarks" class="level2">
+<h2 class="anchored" data-anchor-id="concluding-remarks">Concluding remarks</h2>
+<p>Proper treatment of performance evaluation in data science and AI requires a sophisticated <strong>measurement framework</strong> with the following components: - <em>Coherent types and meta-data</em> for the observable performance indicators; - <em>Latent-variable models</em> for the unobservable performance indicators of interest; - <em>Causal models</em> to allow for counterfactual reasoning.</p>
+<section id="acknowledgements" class="level3">
+<h3 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h3>
+<p>Part of this work was funded through a project with the Alan Turing Institute; papers, code and videos can be accessed <a href="https://www.turing.ac.uk/research/research-projects/measurement-theory-data-science-and-ai#recent-updates">here</a>.</p>
+<p>Many thanks to Hao Song, the Research Associate on the project; and collaborators Jose Hernandez-Orallo, Kacper Sokol, Meelis Kull, Tom Diethe, Yu Chen, Ricardo Prudencio, Telmo Filho, Miquel Perello-Nieto, Raul Santos-Rodriguez and many others. <!-- .element: class="fragment" --></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Peter Flach (University of Bristol)</div>   
+    <div class="nav-footer-right">This website was built with <a href="https://quarto.org/">Quarto</a>.</div>
+  </div>
+</footer>
+
+
+
+</body></html>
